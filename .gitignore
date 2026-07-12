@@ -30,7 +30,7 @@ wheels/
 share/python-wheels/
 
 # Логи и отчеты об ошибках
-*.log
+# *.log
 pip-log.txt
 pip-delete-this-directory.txt
 
