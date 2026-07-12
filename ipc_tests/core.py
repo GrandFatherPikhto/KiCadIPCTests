@@ -43,14 +43,14 @@ def setup_logging(log_file="logs/test.log", console_level=logging.INFO, file_lev
 
     return logger
 
-def get_kicad_board(socket_path=None, logger=None):
+def get_kicad_board(socket_path=None, logger=None, timeout_ms=10000):
     """Подключается к KiCad через IPC и возвращает объект Board."""
     if socket_path is None:
         socket_path = os.environ.get("KICAD_IPC_SOCKET", DEFAULT_SOCKET_PATH)
     if logger:
         logger.info(f"Подключение к IPC по сокету: {socket_path}")
     try:
-        kicad = KiCad(socket_path=socket_path)
+        kicad = KiCad(socket_path=socket_path, timeout_ms=timeout_ms)
         board = kicad.get_board()
         if logger:
             logger.info("Подключение успешно, объект Board получен.")

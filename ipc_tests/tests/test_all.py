@@ -5,7 +5,16 @@
 import sys
 import os
 
-from ipc_tests.tests import test_board, test_components, test_connection, test_nets, test_pads, test_project
+from ipc_tests.tests import (
+    test_board, 
+    test_components, 
+    test_connection, 
+    test_nets, 
+    test_pads, 
+    test_project, 
+    test_full_api
+    )
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from ipc_tests.core import setup_logging
@@ -25,6 +34,7 @@ def run_all_tests():
         ("Инспекция компонентов", test_components.run_test),
         ("Путь проекта", test_project.run_test),
         ("Экспорт netlist через CLI", test_cli_netlist.run_test),
+        ("Полный API-тест", test_full_api.run_test),
     ]
     
     results = {}
