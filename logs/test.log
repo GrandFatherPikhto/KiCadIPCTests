@@ -968,261 +968,164 @@ UnboundLocalError: cannot access local variable 'footprints' where it is not ass
 2026-07-12 13:51:34 - KiCadIPCTests - INFO -   Экспорт netlist через CLI: [FAIL] НЕУДАЧА
 2026-07-12 13:51:34 - KiCadIPCTests - INFO -   Полный API-тест: [FAIL] НЕУДАЧА
 2026-07-12 13:51:34 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:06:43.908 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:06:43.909 - KiCadIPCTests - INFO - ЗАПУСК ВСЕХ ТЕСТОВ IPC KiCad 10
-2026-07-12 14:06:43.909 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:06:43.909 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.890 - KiCadIPCTests - INFO - ================================================================================
+2026-07-12 14:22:10.891 - KiCadIPCTests - INFO - ЗАПУСК ВСЕХ ТЕСТОВ IPC KiCad 10
+2026-07-12 14:22:10.891 - KiCadIPCTests - INFO - ================================================================================
+2026-07-12 14:22:10.891 - KiCadIPCTests - INFO - 
 --- Запуск теста: Подключение ---
-2026-07-12 14:06:43.909 - KiCadIPCTests - INFO - === ТЕСТ: ПОДКЛЮЧЕНИЕ К IPC ===
-2026-07-12 14:06:43.909 - KiCadIPCTests - INFO - Подключение к IPC по сокету: ipc://C:\Users\grand\AppData\Local\Temp\kicad\api.sock
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - Подключение успешно за 1.8 мс, объект Board получен.
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - Объект Board получен успешно.
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - [PASS] Тест 'Подключение' пройден успешно (2.1 мс).
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.891 - KiCadIPCTests - INFO - === ТЕСТ: ПОДКЛЮЧЕНИЕ К IPC ===
+2026-07-12 14:22:10.891 - KiCadIPCTests - INFO - Подключение к IPC по сокету: ipc://C:\Users\grand\AppData\Local\Temp\kicad\api.sock
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - Подключение успешно за 1.7 мс, объект Board получен.
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - Объект Board получен успешно.
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - [PASS] Тест 'Подключение' пройден успешно (2.0 мс).
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - 
 --- Запуск теста: Переиспользование соединения ---
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - === ТЕСТ: ПЕРЕИСПОЛЬЗОВАНИЕ IPC-СОЕДИНЕНИЯ ===
-2026-07-12 14:06:43.911 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.911 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.911 - KiCadIPCTests - INFO - Повторный get_kicad_board() занял 0.0 мс (тот же объект: True)
-2026-07-12 14:06:43.911 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.911 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.911 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.912 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.912 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.912 - KiCadIPCTests - INFO - 5 повторных вызовов подряд, мс: [0.0, 0.0, 0.0, 0.0, 0.0]
-2026-07-12 14:06:43.912 - KiCadIPCTests - INFO - [PASS] Тест 'Переиспользование соединения' пройден успешно (0.4 мс).
-2026-07-12 14:06:43.912 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - === ТЕСТ: ПЕРЕИСПОЛЬЗОВАНИЕ IPC-СОЕДИНЕНИЯ ===
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - Повторный get_kicad_board() занял 0.0 мс (тот же объект: True)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - 5 повторных вызовов подряд, мс: [0.0, 0.0, 0.0, 0.0, 0.0]
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - [PASS] Тест 'Переиспользование соединения' пройден успешно (0.4 мс).
+2026-07-12 14:22:10.893 - KiCadIPCTests - INFO - 
 --- Запуск теста: Информация о плате ---
-2026-07-12 14:06:43.912 - KiCadIPCTests - INFO - === ТЕСТ: ИНФОРМАЦИЯ О ПЛАТЕ ===
-2026-07-12 14:06:43.912 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.912 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.913 - KiCadIPCTests - ERROR - get_board_edge_bounding_box упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.913 - KiCadIPCTests - INFO - Информация о плате: {'footprints_count': 0, 'nets_count': 114, 'board_size_mm': None, 'copper_layer_count': 2}
-2026-07-12 14:06:43.913 - KiCadIPCTests - INFO - [PASS] Тест 'Информация о плате' пройден успешно (1.1 мс).
-2026-07-12 14:06:43.913 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.894 - KiCadIPCTests - INFO - === ТЕСТ: ИНФОРМАЦИЯ О ПЛАТЕ ===
+2026-07-12 14:22:10.894 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.901 - KiCadIPCTests - WARNING - На слое Edge.Cuts не найдено ни одной фигуры контура платы
+2026-07-12 14:22:10.902 - KiCadIPCTests - INFO - Информация о плате: {'footprints_count': 75, 'nets_count': 114, 'board_size_mm': None, 'copper_layer_count': 2}
+2026-07-12 14:22:10.902 - KiCadIPCTests - INFO - [PASS] Тест 'Информация о плате' пройден успешно (8.2 мс).
+2026-07-12 14:22:10.902 - KiCadIPCTests - INFO - 
 --- Запуск теста: Цепи и коды ---
-2026-07-12 14:06:43.913 - KiCadIPCTests - INFO - === ТЕСТ: ЦЕПИ И ИХ КОДЫ ===
-2026-07-12 14:06:43.913 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.913 - KiCadIPCTests - INFO - Найдено цепей: 114
-2026-07-12 14:06:43.914 - KiCadIPCTests - INFO - Построена карта цепей: 114 записей
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   0: 
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   107: +1V2
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   9: +1V2_VCCD_PLL
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   3: +1V2_VCCINT
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   112: +2V5
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   8: +2V5_VCCA
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   1: +3V3
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   6: +3V3_FLASH
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   2: +3V3_OSCILL
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG -   7: +3V3_VCCIO
-2026-07-12 14:06:43.914 - KiCadIPCTests - INFO - [PASS] Тест 'Цепи и коды' пройден успешно (1.0 мс).
-2026-07-12 14:06:43.914 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.902 - KiCadIPCTests - INFO - === ТЕСТ: ЦЕПИ И ИХ КОДЫ ===
+2026-07-12 14:22:10.902 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.902 - KiCadIPCTests - INFO - Найдено цепей: 114
+2026-07-12 14:22:10.903 - KiCadIPCTests - INFO - Построена карта цепей: 114 записей
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   0: 
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   107: +1V2
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   7: +1V2_VCCD_PLL
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   3: +1V2_VCCINT
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   112: +2V5
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   34: +2V5_VCCA
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   1: +3V3
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   6: +3V3_FLASH
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   2: +3V3_OSCILL
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG -   22: +3V3_VCCIO
+2026-07-12 14:22:10.903 - KiCadIPCTests - INFO - [PASS] Тест 'Цепи и коды' пройден успешно (1.1 мс).
+2026-07-12 14:22:10.903 - KiCadIPCTests - INFO - 
 --- Запуск теста: Площадки и цепи ---
-2026-07-12 14:06:43.914 - KiCadIPCTests - INFO - === ТЕСТ: ПЛОЩАДКИ И ЦЕПИ ===
-2026-07-12 14:06:43.914 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.914 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.914 - KiCadIPCTests - WARNING - Нет компонентов.
-2026-07-12 14:06:43.914 - KiCadIPCTests - ERROR - [FAIL] Тест 'Площадки и цепи' завершился с ошибкой (0.4 мс).
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.903 - KiCadIPCTests - INFO - === ТЕСТ: ПЛОЩАДКИ И ЦЕПИ ===
+2026-07-12 14:22:10.903 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO - Анализируем компонент: R4
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO -   Пин 1: цепь '+3V3' (код 0)
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO -   Пин 2: цепь '+3V3_OSCILL' (код 0)
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO - [PASS] Тест 'Площадки и цепи' пройден успешно (6.9 мс).
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO - 
 --- Запуск теста: Инспекция компонентов ---
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - === ТЕСТ: ИНСПЕКЦИЯ КОМПОНЕНТОВ ===
-2026-07-12 14:06:43.915 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.915 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.915 - KiCadIPCTests - WARNING - Нет компонентов (см. лог выше — если это get_footprints упал с ошибкой, а не реально пустой список, причина будет явно записана строкой ERROR над этим сообщением).
-2026-07-12 14:06:43.915 - KiCadIPCTests - ERROR - [FAIL] Тест 'Инспекция компонентов' завершился с ошибкой (0.5 мс).
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.910 - KiCadIPCTests - INFO - === ТЕСТ: ИНСПЕКЦИЯ КОМПОНЕНТОВ ===
+2026-07-12 14:22:10.910 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.916 - KiCadIPCTests - INFO - Всего компонентов: 75
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   R4 (2R2) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   C46 (1uF) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   R3 (2R2) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   R6 (2R2) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   C47 (1uF) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   IC1 (10CL006YE144C8G) – площадок: 145
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   R5 (2R2) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   C1 (1uF) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   C2 (1uF) – площадок: 2
+2026-07-12 14:22:10.917 - KiCadIPCTests - INFO -   C4 (1uF) – площадок: 2
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - [PASS] Тест 'Инспекция компонентов' пройден успешно (7.4 мс).
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - 
 --- Запуск теста: Путь проекта ---
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - === ТЕСТ: ПУТЬ ПРОЕКТА ===
-2026-07-12 14:06:43.915 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - Папка проекта: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
-2026-07-12 14:06:43.915 - KiCadIPCTests - INFO - Имя проекта: 10CL006
-2026-07-12 14:06:43.916 - KiCadIPCTests - INFO - Путь к схеме: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006\10CL006.kicad_sch
-2026-07-12 14:06:43.916 - KiCadIPCTests - INFO - Файл схемы существует.
-2026-07-12 14:06:43.916 - KiCadIPCTests - INFO - [PASS] Тест 'Путь проекта' пройден успешно (0.4 мс).
-2026-07-12 14:06:43.916 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - === ТЕСТ: ПУТЬ ПРОЕКТА ===
+2026-07-12 14:22:10.918 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - Папка проекта: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - Имя проекта: 10CL006
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - Путь к схеме: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006\10CL006.kicad_sch
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - Файл схемы существует.
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - [PASS] Тест 'Путь проекта' пройден успешно (0.6 мс).
+2026-07-12 14:22:10.918 - KiCadIPCTests - INFO - 
 --- Запуск теста: Экспорт netlist через CLI ---
-2026-07-12 14:06:43.916 - KiCadIPCTests - INFO - === ТЕСТ: ЭКСПОРТ NETLIST ЧЕРЕЗ CLI ===
-2026-07-12 14:06:43.916 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.917 - KiCadIPCTests - ERROR - kicad-cli не найден по пути: C:\Program Files\KiCad\10.0\bin\kicad-cli.exe
-2026-07-12 14:06:43.917 - KiCadIPCTests - ERROR - Экспорт netlist не удался (детали см. строками ERROR выше).
-2026-07-12 14:06:43.918 - KiCadIPCTests - ERROR - [FAIL] Тест 'Экспорт netlist через CLI' завершился с ошибкой (1.7 мс).
-2026-07-12 14:06:43.918 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:10.919 - KiCadIPCTests - INFO - === ТЕСТ: ЭКСПОРТ NETLIST ЧЕРЕЗ CLI ===
+2026-07-12 14:22:10.919 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:10.920 - KiCadIPCTests - DEBUG - kicad-cli найден по стандартному пути: C:\Users\grand\AppData\Local\Programs\KiCad\10.0\bin\kicad-cli.exe
+2026-07-12 14:22:10.920 - KiCadIPCTests - DEBUG - Запуск: C:\Users\grand\AppData\Local\Programs\KiCad\10.0\bin\kicad-cli.exe sch export netlist --format kicadxml --output C:\Users\grand\AppData\Local\Temp\tmpwmg5it87.xml D:\Projects\Python\KiCadIPCTest\test_boards\10CL006\10CL006.kicad_sch
+2026-07-12 14:22:30.164 - KiCadIPCTests - INFO - Netlist экспортирован успешно.
+2026-07-12 14:22:30.171 - KiCadIPCTests - INFO - Найдено цепей в netlist: 113
+2026-07-12 14:22:30.171 - KiCadIPCTests - INFO -   Цепь '+1V2': узлы ['C1.1', 'C15.1', 'C16.1']...
+2026-07-12 14:22:30.171 - KiCadIPCTests - INFO -   Цепь '+1V2_VCCD_PLL': узлы ['C37.1', 'C38.1', 'C47.1']...
+2026-07-12 14:22:30.171 - KiCadIPCTests - INFO -   Цепь '+1V2_VCCINT': узлы ['C19.1', 'C20.1', 'C21.1']...
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO -   Цепь '+2V5': узлы ['C17.1', 'C3.1', 'FB3.1']...
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO -   Цепь '+2V5_VCCA': узлы ['C28.1', 'C29.1', 'C48.1']...
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO - [PASS] Тест 'Экспорт netlist через CLI' пройден успешно (19253.4 мс).
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO - 
 --- Запуск теста: Полный API-тест ---
-2026-07-12 14:06:43.918 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ВСЕХ КЛАССОВ И МЕТОДОВ IPC ===
-2026-07-12 14:06:43.918 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:06:43.918 - KiCadIPCTests - INFO - 1. Получение списков объектов...
-2026-07-12 14:06:43.918 - KiCadIPCTests - ERROR - [ERR] get_footprints — 0.4 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.919 - KiCadIPCTests - DEBUG - [OK]  get_nets — 0.7 мс, 114 шт.
-2026-07-12 14:06:43.919 - KiCadIPCTests - ERROR - [ERR] get_tracks — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.920 - KiCadIPCTests - ERROR - [ERR] get_vias — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.920 - KiCadIPCTests - ERROR - [ERR] get_zones — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.920 - KiCadIPCTests - ERROR - [ERR] get_pads — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.920 - KiCadIPCTests - ERROR - [ERR] get_text — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.920 - KiCadIPCTests - ERROR - [ERR] get_shapes — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.921 - KiCadIPCTests - ERROR - [ERR] get_dimensions — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.921 - KiCadIPCTests - ERROR - [ERR] get_groups — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.921 - KiCadIPCTests - INFO - 2. Проверка поисковых методов...
-2026-07-12 14:06:43.921 - KiCadIPCTests - ERROR - [ERR] get_items(ALL_PCB_TYPES) — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.921 - KiCadIPCTests - ERROR - [ERR] get_items_by_net — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.921 - KiCadIPCTests - INFO - 3. Проект и штамп...
-2026-07-12 14:06:43.921 - KiCadIPCTests - DEBUG - [OK]  get_project — 0.0 мс
-2026-07-12 14:06:43.921 - KiCadIPCTests - INFO -    Проект: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
-2026-07-12 14:06:43.921 - KiCadIPCTests - DEBUG - [OK]  get_title_block_info — 0.1 мс
-2026-07-12 14:06:43.921 - KiCadIPCTests - INFO -    Title: 
-2026-07-12 14:06:43.922 - KiCadIPCTests - INFO - 4. Слои...
-2026-07-12 14:06:43.922 - KiCadIPCTests - DEBUG - [OK]  get_copper_layer_count — 0.1 мс
-2026-07-12 14:06:43.922 - KiCadIPCTests - INFO -    Медных слоёв: 2
-2026-07-12 14:06:43.922 - KiCadIPCTests - DEBUG - [OK]  get_enabled_layers — 0.1 мс, 24 шт.
-2026-07-12 14:06:43.922 - KiCadIPCTests - DEBUG - [OK]  get_active_layer — 0.1 мс
-2026-07-12 14:06:43.922 - KiCadIPCTests - INFO -    Активный слой: 3
-2026-07-12 14:06:43.922 - KiCadIPCTests - INFO - 5. Выделение...
-2026-07-12 14:06:43.922 - KiCadIPCTests - DEBUG - [OK]  get_selection — 0.2 мс, 0 шт.
-2026-07-12 14:06:43.922 - KiCadIPCTests - INFO - 6. Транзакции...
-2026-07-12 14:06:43.923 - KiCadIPCTests - ERROR - [ERR] begin_commit — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO - 7. Сохранение...
-2026-07-12 14:06:43.923 - KiCadIPCTests - ERROR - [ERR] save — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ЗАВЕРШЁН ===
-2026-07-12 14:06:43.923 - KiCadIPCTests - ERROR - [FAIL] Тест 'Полный API-тест' завершился с ошибкой (5.3 мс).
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO - 
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ВСЕХ КЛАССОВ И МЕТОДОВ IPC ===
+2026-07-12 14:22:30.172 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:30.172 - KiCadIPCTests - INFO - 1. Получение списков объектов...
+2026-07-12 14:22:30.180 - KiCadIPCTests - DEBUG - [OK]  get_footprints — 8.1 мс, 75 шт.
+2026-07-12 14:22:30.181 - KiCadIPCTests - DEBUG - [OK]  get_nets — 0.5 мс, 114 шт.
+2026-07-12 14:22:30.181 - KiCadIPCTests - DEBUG - [OK]  get_tracks — 0.3 мс, 3 шт.
+2026-07-12 14:22:30.182 - KiCadIPCTests - DEBUG - [OK]  get_vias — 0.3 мс, 1 шт.
+2026-07-12 14:22:30.182 - KiCadIPCTests - DEBUG - [OK]  get_zones — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.184 - KiCadIPCTests - DEBUG - [OK]  get_pads — 2.3 мс, 309 шт.
+2026-07-12 14:22:30.185 - KiCadIPCTests - DEBUG - [OK]  get_text — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.185 - KiCadIPCTests - DEBUG - [OK]  get_shapes — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.185 - KiCadIPCTests - DEBUG - [OK]  get_dimensions — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.185 - KiCadIPCTests - DEBUG - [OK]  get_groups — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.185 - KiCadIPCTests - INFO - 2. Проверка поисковых методов...
+2026-07-12 14:22:30.196 - KiCadIPCTests - DEBUG - [OK]  get_items(ALL_PCB_TYPES) — 10.1 мс, 388 шт.
+2026-07-12 14:22:30.196 - KiCadIPCTests - DEBUG - [OK]  get_items_by_id — 0.5 мс, 1 шт.
+2026-07-12 14:22:30.196 - KiCadIPCTests - DEBUG - [OK]  get_items_by_net — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.197 - KiCadIPCTests - DEBUG - [OK]  get_connected_items — 0.2 мс, 1 шт.
+2026-07-12 14:22:30.197 - KiCadIPCTests - INFO - 3. Проект и штамп...
+2026-07-12 14:22:30.197 - KiCadIPCTests - DEBUG - [OK]  get_project — 0.0 мс
+2026-07-12 14:22:30.197 - KiCadIPCTests - INFO -    Проект: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
+2026-07-12 14:22:30.197 - KiCadIPCTests - DEBUG - [OK]  get_title_block_info — 0.2 мс
+2026-07-12 14:22:30.197 - KiCadIPCTests - INFO -    Title: 
+2026-07-12 14:22:30.197 - KiCadIPCTests - INFO - 4. Слои...
+2026-07-12 14:22:30.198 - KiCadIPCTests - DEBUG - [OK]  get_copper_layer_count — 0.2 мс
+2026-07-12 14:22:30.198 - KiCadIPCTests - INFO -    Медных слоёв: 2
+2026-07-12 14:22:30.198 - KiCadIPCTests - DEBUG - [OK]  get_enabled_layers — 0.2 мс, 24 шт.
+2026-07-12 14:22:30.198 - KiCadIPCTests - DEBUG - [OK]  get_active_layer — 0.2 мс
+2026-07-12 14:22:30.198 - KiCadIPCTests - INFO -    Активный слой: 3
+2026-07-12 14:22:30.198 - KiCadIPCTests - INFO - 5. Выделение...
+2026-07-12 14:22:30.199 - KiCadIPCTests - DEBUG - [OK]  get_selection — 0.2 мс, 0 шт.
+2026-07-12 14:22:30.208 - KiCadIPCTests - DEBUG - [OK]  add_to_selection — 9.7 мс, 1 шт.
+2026-07-12 14:22:30.209 - KiCadIPCTests - DEBUG - [OK]  get_selection (после добавления) — 0.6 мс, 1 шт.
+2026-07-12 14:22:30.212 - KiCadIPCTests - DEBUG - [OK]  remove_from_selection — 2.9 мс, 0 шт.
+2026-07-12 14:22:30.212 - KiCadIPCTests - DEBUG - [OK]  clear_selection — 0.3 мс
+2026-07-12 14:22:30.212 - KiCadIPCTests - INFO - 6. Транзакции...
+2026-07-12 14:22:30.213 - KiCadIPCTests - DEBUG - [OK]  begin_commit — 0.2 мс
+2026-07-12 14:22:30.214 - KiCadIPCTests - DEBUG - [OK]  drop_commit — 1.2 мс
+2026-07-12 14:22:30.214 - KiCadIPCTests - INFO - 7. Сохранение...
+2026-07-12 14:22:30.280 - KiCadIPCTests - DEBUG - [OK]  save — 65.9 мс
+2026-07-12 14:22:30.280 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ЗАВЕРШЁН ===
+2026-07-12 14:22:30.281 - KiCadIPCTests - INFO - [PASS] Тест 'Полный API-тест' пройден успешно (108.8 мс).
+2026-07-12 14:22:30.281 - KiCadIPCTests - INFO - 
+--- Запуск теста: Проба get_footprints с повторами ---
+2026-07-12 14:22:30.281 - KiCadIPCTests - INFO - === ТЕСТ: ПРОБА get_footprints С ПОВТОРАМИ ===
+2026-07-12 14:22:30.281 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
+2026-07-12 14:22:30.311 - KiCadIPCTests - DEBUG - [OK]  get_footprints (попытка 1/6) — 30.0 мс, 75 шт.
+2026-07-12 14:22:30.311 - KiCadIPCTests - INFO -    Попытка 1: УСПЕХ, 75 футпринтов
+2026-07-12 14:22:30.311 - KiCadIPCTests - INFO - [PASS] get_footprints в итоге отработал — состояние 'busy' временное и само проходит.
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO - [PASS] Тест 'Проба get_footprints с повторами' пройден успешно (30.6 мс).
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO - 
 ================================================================================
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO - ИТОГИ ТЕСТИРОВАНИЯ:
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO -   Подключение: [SUCCESS] УСПЕШНО — 2.1 мс
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO -   Переиспользование соединения: [SUCCESS] УСПЕШНО — 0.4 мс
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO -   Информация о плате: [SUCCESS] УСПЕШНО — 1.1 мс
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO -   Цепи и коды: [SUCCESS] УСПЕШНО — 1.0 мс
-2026-07-12 14:06:43.923 - KiCadIPCTests - INFO -   Площадки и цепи: [FAIL] НЕУДАЧА — 0.4 мс
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO -   Инспекция компонентов: [FAIL] НЕУДАЧА — 0.5 мс
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO -   Путь проекта: [SUCCESS] УСПЕШНО — 0.4 мс
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO -   Экспорт netlist через CLI: [FAIL] НЕУДАЧА — 1.7 мс
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO -   Полный API-тест: [FAIL] НЕУДАЧА — 5.3 мс
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO - Пройдено: 5/9. Общее время прогона: 14.3 мс.
-2026-07-12 14:06:43.924 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:07:24.077 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:07:24.077 - KiCadIPCTests - INFO - ЗАПУСК ВСЕХ ТЕСТОВ IPC KiCad 10
-2026-07-12 14:07:24.078 - KiCadIPCTests - INFO - ================================================================================
-2026-07-12 14:07:24.078 - KiCadIPCTests - INFO - 
---- Запуск теста: Подключение ---
-2026-07-12 14:07:24.078 - KiCadIPCTests - INFO - === ТЕСТ: ПОДКЛЮЧЕНИЕ К IPC ===
-2026-07-12 14:07:24.078 - KiCadIPCTests - INFO - Подключение к IPC по сокету: ipc://C:\Users\grand\AppData\Local\Temp\kicad\api.sock
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - Подключение успешно за 1.9 мс, объект Board получен.
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - Объект Board получен успешно.
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - [PASS] Тест 'Подключение' пройден успешно (2.2 мс).
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - 
---- Запуск теста: Переиспользование соединения ---
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - === ТЕСТ: ПЕРЕИСПОЛЬЗОВАНИЕ IPC-СОЕДИНЕНИЯ ===
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - Повторный get_kicad_board() занял 0.0 мс (тот же объект: True)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.080 - KiCadIPCTests - INFO - 5 повторных вызовов подряд, мс: [0.0, 0.0, 0.0, 0.0, 0.0]
-2026-07-12 14:07:24.081 - KiCadIPCTests - INFO - [PASS] Тест 'Переиспользование соединения' пройден успешно (0.4 мс).
-2026-07-12 14:07:24.081 - KiCadIPCTests - INFO - 
---- Запуск теста: Информация о плате ---
-2026-07-12 14:07:24.081 - KiCadIPCTests - INFO - === ТЕСТ: ИНФОРМАЦИЯ О ПЛАТЕ ===
-2026-07-12 14:07:24.081 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.081 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.081 - KiCadIPCTests - ERROR - get_board_edge_bounding_box упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.082 - KiCadIPCTests - INFO - Информация о плате: {'footprints_count': 0, 'nets_count': 114, 'board_size_mm': None, 'copper_layer_count': 2}
-2026-07-12 14:07:24.082 - KiCadIPCTests - INFO - [PASS] Тест 'Информация о плате' пройден успешно (1.0 мс).
-2026-07-12 14:07:24.082 - KiCadIPCTests - INFO - 
---- Запуск теста: Цепи и коды ---
-2026-07-12 14:07:24.082 - KiCadIPCTests - INFO - === ТЕСТ: ЦЕПИ И ИХ КОДЫ ===
-2026-07-12 14:07:24.082 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.082 - KiCadIPCTests - INFO - Найдено цепей: 114
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - Построена карта цепей: 114 записей
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   0: 
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   107: +1V2
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   9: +1V2_VCCD_PLL
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   3: +1V2_VCCINT
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   112: +2V5
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   8: +2V5_VCCA
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   1: +3V3
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   6: +3V3_FLASH
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   2: +3V3_OSCILL
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG -   7: +3V3_VCCIO
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - [PASS] Тест 'Цепи и коды' пройден успешно (1.0 мс).
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - 
---- Запуск теста: Площадки и цепи ---
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - === ТЕСТ: ПЛОЩАДКИ И ЦЕПИ ===
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.083 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.083 - KiCadIPCTests - WARNING - Нет компонентов.
-2026-07-12 14:07:24.083 - KiCadIPCTests - ERROR - [FAIL] Тест 'Площадки и цепи' завершился с ошибкой (0.4 мс).
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - 
---- Запуск теста: Инспекция компонентов ---
-2026-07-12 14:07:24.083 - KiCadIPCTests - INFO - === ТЕСТ: ИНСПЕКЦИЯ КОМПОНЕНТОВ ===
-2026-07-12 14:07:24.083 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.084 - KiCadIPCTests - ERROR - get_footprints упал: ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.084 - KiCadIPCTests - WARNING - Нет компонентов (см. лог выше — если это get_footprints упал с ошибкой, а не реально пустой список, причина будет явно записана строкой ERROR над этим сообщением).
-2026-07-12 14:07:24.084 - KiCadIPCTests - ERROR - [FAIL] Тест 'Инспекция компонентов' завершился с ошибкой (0.4 мс).
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - 
---- Запуск теста: Путь проекта ---
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - === ТЕСТ: ПУТЬ ПРОЕКТА ===
-2026-07-12 14:07:24.084 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - Папка проекта: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - Имя проекта: 10CL006
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - Путь к схеме: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006\10CL006.kicad_sch
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - Файл схемы существует.
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - [PASS] Тест 'Путь проекта' пройден успешно (0.4 мс).
-2026-07-12 14:07:24.084 - KiCadIPCTests - INFO - 
---- Запуск теста: Экспорт netlist через CLI ---
-2026-07-12 14:07:24.085 - KiCadIPCTests - INFO - === ТЕСТ: ЭКСПОРТ NETLIST ЧЕРЕЗ CLI ===
-2026-07-12 14:07:24.085 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.086 - KiCadIPCTests - ERROR - kicad-cli не найден по пути: C:\Program Files\KiCad\10.0\bin\kicad-cli.exe
-2026-07-12 14:07:24.086 - KiCadIPCTests - ERROR - Экспорт netlist не удался (детали см. строками ERROR выше).
-2026-07-12 14:07:24.086 - KiCadIPCTests - ERROR - [FAIL] Тест 'Экспорт netlist через CLI' завершился с ошибкой (1.4 мс).
-2026-07-12 14:07:24.086 - KiCadIPCTests - INFO - 
---- Запуск теста: Полный API-тест ---
-2026-07-12 14:07:24.086 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ВСЕХ КЛАССОВ И МЕТОДОВ IPC ===
-2026-07-12 14:07:24.086 - KiCadIPCTests - DEBUG - Переиспользую существующее IPC-соединение (проверка за 0.0 мс)
-2026-07-12 14:07:24.086 - KiCadIPCTests - INFO - 1. Получение списков объектов...
-2026-07-12 14:07:24.087 - KiCadIPCTests - ERROR - [ERR] get_footprints — 0.3 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.087 - KiCadIPCTests - DEBUG - [OK]  get_nets — 0.6 мс, 114 шт.
-2026-07-12 14:07:24.088 - KiCadIPCTests - ERROR - [ERR] get_tracks — 0.4 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.088 - KiCadIPCTests - ERROR - [ERR] get_vias — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.088 - KiCadIPCTests - ERROR - [ERR] get_zones — 0.3 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.089 - KiCadIPCTests - ERROR - [ERR] get_pads — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.089 - KiCadIPCTests - ERROR - [ERR] get_text — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.089 - KiCadIPCTests - ERROR - [ERR] get_shapes — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.089 - KiCadIPCTests - ERROR - [ERR] get_dimensions — 0.3 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.090 - KiCadIPCTests - ERROR - [ERR] get_groups — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.090 - KiCadIPCTests - INFO - 2. Проверка поисковых методов...
-2026-07-12 14:07:24.090 - KiCadIPCTests - ERROR - [ERR] get_items(ALL_PCB_TYPES) — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.090 - KiCadIPCTests - ERROR - [ERR] get_items_by_net — 0.2 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.090 - KiCadIPCTests - INFO - 3. Проект и штамп...
-2026-07-12 14:07:24.090 - KiCadIPCTests - DEBUG - [OK]  get_project — 0.0 мс
-2026-07-12 14:07:24.090 - KiCadIPCTests - INFO -    Проект: D:\Projects\Python\KiCadIPCTest\test_boards\10CL006
-2026-07-12 14:07:24.091 - KiCadIPCTests - DEBUG - [OK]  get_title_block_info — 0.2 мс
-2026-07-12 14:07:24.091 - KiCadIPCTests - INFO -    Title: 
-2026-07-12 14:07:24.091 - KiCadIPCTests - INFO - 4. Слои...
-2026-07-12 14:07:24.091 - KiCadIPCTests - DEBUG - [OK]  get_copper_layer_count — 0.2 мс
-2026-07-12 14:07:24.091 - KiCadIPCTests - INFO -    Медных слоёв: 2
-2026-07-12 14:07:24.091 - KiCadIPCTests - DEBUG - [OK]  get_enabled_layers — 0.1 мс, 24 шт.
-2026-07-12 14:07:24.092 - KiCadIPCTests - DEBUG - [OK]  get_active_layer — 0.1 мс
-2026-07-12 14:07:24.092 - KiCadIPCTests - INFO -    Активный слой: 3
-2026-07-12 14:07:24.092 - KiCadIPCTests - INFO - 5. Выделение...
-2026-07-12 14:07:24.092 - KiCadIPCTests - DEBUG - [OK]  get_selection — 0.1 мс, 0 шт.
-2026-07-12 14:07:24.092 - KiCadIPCTests - INFO - 6. Транзакции...
-2026-07-12 14:07:24.093 - KiCadIPCTests - ERROR - [ERR] begin_commit — 0.5 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO - 7. Сохранение...
-2026-07-12 14:07:24.093 - KiCadIPCTests - ERROR - [ERR] save — 0.1 мс — ApiError: KiCad returned error: KiCad is busy and cannot respond to API requests right now
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO - === ПОЛНЫЙ ТЕСТ ЗАВЕРШЁН ===
-2026-07-12 14:07:24.093 - KiCadIPCTests - ERROR - [FAIL] Тест 'Полный API-тест' завершился с ошибкой (6.9 мс).
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO - 
-================================================================================
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO - ИТОГИ ТЕСТИРОВАНИЯ:
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO -   Подключение: [SUCCESS] УСПЕШНО — 2.2 мс
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO -   Переиспользование соединения: [SUCCESS] УСПЕШНО — 0.4 мс
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO -   Информация о плате: [SUCCESS] УСПЕШНО — 1.0 мс
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO -   Цепи и коды: [SUCCESS] УСПЕШНО — 1.0 мс
-2026-07-12 14:07:24.093 - KiCadIPCTests - INFO -   Площадки и цепи: [FAIL] НЕУДАЧА — 0.4 мс
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO -   Инспекция компонентов: [FAIL] НЕУДАЧА — 0.4 мс
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO -   Путь проекта: [SUCCESS] УСПЕШНО — 0.4 мс
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO -   Экспорт netlist через CLI: [FAIL] НЕУДАЧА — 1.4 мс
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO -   Полный API-тест: [FAIL] НЕУДАЧА — 6.9 мс
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO - Пройдено: 5/9. Общее время прогона: 15.4 мс.
-2026-07-12 14:07:24.094 - KiCadIPCTests - INFO - ================================================================================
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO - ИТОГИ ТЕСТИРОВАНИЯ:
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Подключение: [SUCCESS] УСПЕШНО — 2.0 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Переиспользование соединения: [SUCCESS] УСПЕШНО — 0.4 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Информация о плате: [SUCCESS] УСПЕШНО — 8.2 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Цепи и коды: [SUCCESS] УСПЕШНО — 1.1 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Площадки и цепи: [SUCCESS] УСПЕШНО — 6.9 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Инспекция компонентов: [SUCCESS] УСПЕШНО — 7.4 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Путь проекта: [SUCCESS] УСПЕШНО — 0.6 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Экспорт netlist через CLI: [SUCCESS] УСПЕШНО — 19253.4 мс
+2026-07-12 14:22:30.312 - KiCadIPCTests - INFO -   Полный API-тест: [SUCCESS] УСПЕШНО — 108.8 мс
+2026-07-12 14:22:30.313 - KiCadIPCTests - INFO -   Проба get_footprints с повторами: [SUCCESS] УСПЕШНО — 30.6 мс
+2026-07-12 14:22:30.313 - KiCadIPCTests - INFO - Пройдено: 10/10. Общее время прогона: 19421.0 мс.
+2026-07-12 14:22:30.313 - KiCadIPCTests - INFO - ================================================================================

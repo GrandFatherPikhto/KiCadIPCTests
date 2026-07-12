@@ -11,6 +11,7 @@ from ipc_tests.tests import (
     test_components,
     test_connection,
     test_connection_reuse,
+    test_footprints_probe,
     test_nets,
     test_pads,
     test_project,
@@ -39,6 +40,7 @@ def run_all_tests():
         ("Путь проекта", test_project.run_test),
         ("Экспорт netlist через CLI", test_cli_netlist.run_test),
         ("Полный API-тест", test_full_api.run_test),
+        ("Проба get_footprints с повторами", test_footprints_probe.run_test),
     ]
 
     results = {}

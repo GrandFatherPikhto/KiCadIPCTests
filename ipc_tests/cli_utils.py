@@ -3,10 +3,55 @@
 Утилиты для вызова kicad-cli (не IPC).
 """
 import os
+import shutil
 import subprocess
 import xml.etree.ElementTree as ET
 
-DEFAULT_KICAD_CLI = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
+# ИСПРАВЛЕНО (2026-07-12): раньше был один жёстко прописанный путь
+# (C:\Program Files\KiCad\10.0\bin\kicad-cli.exe), который не совпал с
+# реальной локальной установкой (у Дениса — под AppData\Local\Programs).
+# Теперь пробуем несколько типичных мест по очереди + PATH.
+_CANDIDATE_PATHS = [
+    r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe",
+    r"C:\Program Files (x86)\KiCad\10.0\bin\kicad-cli.exe",
+    os.path.expandvars(r"%LOCALAPPDATA%\Programs\KiCad\10.0\kicad-cli.exe"),
+    os.path.expandvars(r"%LOCALAPPDATA%\Programs\KiCad\10.0\bin\kicad-cli.exe"),
+]
+
+
+def find_kicad_cli(logger=None):
+    """
+    Ищет kicad-cli.exe: сначала переменная окружения KICAD_CLI_PATH, затем
+    несколько типичных путей установки на Windows, затем PATH (shutil.which).
+    Возвращает найденный путь или None.
+    """
+    env_path = os.environ.get("KICAD_CLI_PATH")
+    if env_path:
+        if os.path.exists(env_path):
+            return env_path
+        if logger:
+            logger.warning(f"KICAD_CLI_PATH={env_path!r} указан, но файл не найден — ищу дальше")
+
+    for path in _CANDIDATE_PATHS:
+        if os.path.exists(path):
+            if logger:
+                logger.debug(f"kicad-cli найден по стандартному пути: {path}")
+            return path
+
+    which_path = shutil.which("kicad-cli") or shutil.which("kicad-cli.exe")
+    if which_path:
+        if logger:
+            logger.debug(f"kicad-cli найден через PATH: {which_path}")
+        return which_path
+
+    if logger:
+        tried = ([env_path] if env_path else []) + _CANDIDATE_PATHS
+        logger.error(
+            "kicad-cli.exe не найден. Проверены пути:\n  " + "\n  ".join(tried) +
+            "\nЛибо выставьте KICAD_CLI_PATH, либо добавьте свой путь в "
+            "_CANDIDATE_PATHS в cli_utils.py."
+        )
+    return None
 
 
 def export_netlist(schematic_path, output_path, kicad_cli_path=None, logger=None):
@@ -28,11 +73,9 @@ def export_netlist(schematic_path, output_path, kicad_cli_path=None, logger=None
     "Экспорт netlist не удался" без единой полезной детали.
     """
     if kicad_cli_path is None:
-        kicad_cli_path = os.environ.get("KICAD_CLI_PATH", DEFAULT_KICAD_CLI)
+        kicad_cli_path = find_kicad_cli(logger=logger)
 
-    if not os.path.exists(kicad_cli_path):
-        if logger:
-            logger.error(f"kicad-cli не найден по пути: {kicad_cli_path}")
+    if not kicad_cli_path or not os.path.exists(kicad_cli_path):
         return False
     if not os.path.exists(schematic_path):
         if logger:

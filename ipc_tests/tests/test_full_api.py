@@ -185,9 +185,15 @@ def run_test(logger):
     # 8. Заливка зон (если есть зоны)
     if zones:
         logger.info("8. Заливка зон...")
+        # ВАЖНО: раньше здесь был block=False без ожидания завершения.
+        # Подозрение (не доказано, но по времени сходится): именно
+        # незавершённый асинхронный refill_zones мог оставить плату в
+        # состоянии "занято" для всех операций с содержимым на весь остаток
+        # долгоживущей сессии KiCad. Теперь ждём завершения синхронно —
+        # это медленнее, но не оставляет фоновых джобов висеть.
         _, ok = call_ipc(
-            logger, "refill_zones",
-            board.refill_zones, block=False, max_poll_seconds=1
+            logger, "refill_zones (blocking)",
+            board.refill_zones, block=True, max_poll_seconds=10
         )
         success &= ok
 
