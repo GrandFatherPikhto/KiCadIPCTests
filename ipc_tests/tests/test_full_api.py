@@ -9,10 +9,54 @@
 - Выделение (selection)
 - Транзакции (commit/rollback)
 - Сохранение (без изменений)
+
+ИСПРАВЛЕНО (2026-07-12), два реальных бага:
+
+1. UnboundLocalError: `footprints = list(board.get_footprints())` внутри try
+   — если исключение вылетало ДО завершения присваивания, имя `footprints`
+   вообще не создавалось в локальной области видимости, и следующий
+   `if footprints:` падал `UnboundLocalError`, маскируя настоящую причину
+   (в логе это выглядело как "тест упал с исключением", хотя реальная
+   ошибка — в get_footprints выше). Теперь footprints/nets/pads/zones
+   инициализируются пустыми списками ДО вызовов.
+
+2. `board.get_items(types=0xFFFFFFFF)` — неверное использование API.
+   Судя по исходнику kipy.board.Board.get_items(), параметр types — это
+   ЗНАЧЕНИЕ(-я) enum KiCadObjectType (KOT_PCB_FOOTPRINT, KOT_PCB_PAD, ...),
+   а не битовая маска "все типы". 0xFFFFFFFF (4294967295) не влезает в
+   диапазон protobuf-enum и либо не биндится (в одной версии окружения —
+   "missing 1 required positional argument", в другой — "Value out of
+   range: 4294967295"), а не запрашивает "всё". Чтобы получить всё —
+   надо явно перечислить нужные типы.
+
+Также все повторяющиеся try/except-блоки заменены на core.call_ipc(),
+которая добавляет тайминг каждого вызова — это ключевое для диагностики
+"KiCad is busy": видно, падает вызов мгновенно или висит до таймаута.
 """
-import os
 import tempfile
-from ipc_tests.core import get_kicad_board
+
+from ipc_tests.core import get_kicad_board, call_ipc
+from kipy.proto.common.types import KiCadObjectType
+
+# Типы объектов платы, которые запрашиваем через get_items() как
+# "практически всё, что нас интересует на PCB". Полный список типов
+# смотрите в kipy.proto.common.types.KiCadObjectType — здесь взяты
+# основные PCB-типы (KOT_PCB_*), без схемных (KOT_SCH_*), т.к. IPC в
+# KiCad 9/10 не поддерживает схемный редактор.
+ALL_PCB_TYPES = [
+    KiCadObjectType.KOT_PCB_FOOTPRINT,
+    KiCadObjectType.KOT_PCB_PAD,
+    KiCadObjectType.KOT_PCB_SHAPE,
+    KiCadObjectType.KOT_PCB_TEXT,
+    KiCadObjectType.KOT_PCB_TEXTBOX,
+    KiCadObjectType.KOT_PCB_TRACE,
+    KiCadObjectType.KOT_PCB_VIA,
+    KiCadObjectType.KOT_PCB_ARC,
+    KiCadObjectType.KOT_PCB_ZONE,
+    KiCadObjectType.KOT_PCB_GROUP,
+    KiCadObjectType.KOT_PCB_DIMENSION,
+]
+
 
 def run_test(logger):
     logger.info("=== ПОЛНЫЙ ТЕСТ ВСЕХ КЛАССОВ И МЕТОДОВ IPC ===")
@@ -24,247 +68,128 @@ def run_test(logger):
 
     # 1. Проверка получения базовых списков
     logger.info("1. Получение списков объектов...")
-    try:
-        footprints = list(board.get_footprints())
-        logger.info(f"   Footprints: {len(footprints)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_footprints: {e}")
-        success = False
+    footprints, ok = call_ipc(logger, "get_footprints", lambda: list(board.get_footprints()))
+    footprints = footprints or []
+    success &= ok
 
-    try:
-        nets = list(board.get_nets())
-        logger.info(f"   Nets: {len(nets)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_nets: {e}")
-        success = False
+    nets, ok = call_ipc(logger, "get_nets", lambda: list(board.get_nets()))
+    nets = nets or []
+    success &= ok
 
-    try:
-        tracks = list(board.get_tracks())
-        logger.info(f"   Tracks: {len(tracks)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_tracks: {e}")
-        success = False
+    tracks, ok = call_ipc(logger, "get_tracks", lambda: list(board.get_tracks()))
+    success &= ok
 
-    try:
-        vias = list(board.get_vias())
-        logger.info(f"   Vias: {len(vias)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_vias: {e}")
-        success = False
+    vias, ok = call_ipc(logger, "get_vias", lambda: list(board.get_vias()))
+    success &= ok
 
-    try:
-        zones = list(board.get_zones())
-        logger.info(f"   Zones: {len(zones)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_zones: {e}")
-        success = False
+    zones, ok = call_ipc(logger, "get_zones", lambda: list(board.get_zones()))
+    zones = zones or []
+    success &= ok
 
-    try:
-        pads = list(board.get_pads())
-        logger.info(f"   Pads: {len(pads)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_pads: {e}")
-        success = False
+    pads, ok = call_ipc(logger, "get_pads", lambda: list(board.get_pads()))
+    pads = pads or []
+    success &= ok
 
-    try:
-        texts = list(board.get_text())
-        logger.info(f"   Texts: {len(texts)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_text: {e}")
-        success = False
+    _, ok = call_ipc(logger, "get_text", lambda: list(board.get_text()))
+    success &= ok
 
-    try:
-        shapes = list(board.get_shapes())
-        logger.info(f"   Shapes: {len(shapes)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_shapes: {e}")
-        success = False
+    _, ok = call_ipc(logger, "get_shapes", lambda: list(board.get_shapes()))
+    success &= ok
 
-    try:
-        dimensions = list(board.get_dimensions())
-        logger.info(f"   Dimensions: {len(dimensions)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_dimensions: {e}")
-        success = False
+    _, ok = call_ipc(logger, "get_dimensions", lambda: list(board.get_dimensions()))
+    success &= ok
 
-    try:
-        groups = list(board.get_groups())
-        logger.info(f"   Groups: {len(groups)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_groups: {e}")
-        success = False
+    _, ok = call_ipc(logger, "get_groups", lambda: list(board.get_groups()))
+    success &= ok
 
     # 2. Поисковые методы
     logger.info("2. Проверка поисковых методов...")
-    try:
-        # get_items – используем маску 0xFFFFFFFF (все типы)
-        items = board.get_items(types=0xFFFFFFFF)
-        # items = board.get_items()
-        logger.info(f"   get_items(all): {len(items)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_items: {e}")
-        success = False
+    items, ok = call_ipc(logger, "get_items(ALL_PCB_TYPES)", board.get_items, ALL_PCB_TYPES)
+    success &= ok
 
-    # get_items_by_id – возьмём первый попавшийся ID
     if footprints:
         first_fp = footprints[0]
         if hasattr(first_fp, 'id'):
-            try:
-                items_by_id = board.get_items_by_id([first_fp.id])
-                logger.info(f"   get_items_by_id: найдено {len(items_by_id)}")
-            except Exception as e:
-                logger.error(f"   Ошибка get_items_by_id: {e}")
-                success = False
+            _, ok = call_ipc(logger, "get_items_by_id", board.get_items_by_id, [first_fp.id])
+            success &= ok
 
-    # get_items_by_net – если есть цепи
     if nets:
-        try:
-            items_by_net = board.get_items_by_net(nets[0])
-            logger.info(f"   get_items_by_net: найдено {len(items_by_net)}")
-        except Exception as e:
-            logger.error(f"   Ошибка get_items_by_net: {e}")
-            success = False
+        _, ok = call_ipc(logger, "get_items_by_net", board.get_items_by_net, nets[0])
+        success &= ok
 
-    # get_items_by_netclass – если у цепи есть netclass
     if nets:
         net = nets[0]
         if hasattr(net, 'netclass') and net.netclass:
-            try:
-                items_by_nc = board.get_items_by_netclass(net.netclass)
-                logger.info(f"   get_items_by_netclass: найдено {len(items_by_nc)}")
-            except Exception as e:
-                logger.error(f"   Ошибка get_items_by_netclass: {e}")
-                success = False
+            _, ok = call_ipc(logger, "get_items_by_netclass", board.get_items_by_netclass, net.netclass)
+            success &= ok
 
-    # get_connected_items – возьмём первую площадку
     if pads:
-        first_pad = pads[0]
-        try:
-            connected = board.get_connected_items(first_pad)
-            logger.info(f"   get_connected_items: найдено {len(connected)}")
-        except Exception as e:
-            logger.error(f"   Ошибка get_connected_items: {e}")
-            success = False
+        _, ok = call_ipc(logger, "get_connected_items", board.get_connected_items, pads[0])
+        success &= ok
 
     # 3. Проект и штамп
     logger.info("3. Проект и штамп...")
-    try:
-        project = board.get_project()
-        if project:
-            logger.info(f"   Проект: {project.path if hasattr(project, 'path') else '?'}")
-        else:
-            logger.warning("   get_project вернул None")
-    except Exception as e:
-        logger.error(f"   Ошибка get_project: {e}")
-        success = False
+    project, ok = call_ipc(logger, "get_project", board.get_project)
+    success &= ok
+    if project:
+        logger.info(f"   Проект: {getattr(project, 'path', '?')}")
 
-    try:
-        title_block = board.get_title_block_info()
-        if title_block:
-            logger.info(f"   Title: {title_block.title if hasattr(title_block, 'title') else '?'}")
-        else:
-            logger.warning("   get_title_block_info вернул None")
-    except Exception as e:
-        logger.error(f"   Ошибка get_title_block_info: {e}")
-        success = False
+    title_block, ok = call_ipc(logger, "get_title_block_info", board.get_title_block_info)
+    success &= ok
+    if title_block:
+        logger.info(f"   Title: {getattr(title_block, 'title', '?')}")
 
     # 4. Слои
     logger.info("4. Слои...")
-    try:
-        copper_layers = board.get_copper_layer_count()
+    copper_layers, ok = call_ipc(logger, "get_copper_layer_count", board.get_copper_layer_count)
+    success &= ok
+    if copper_layers is not None:
         logger.info(f"   Медных слоёв: {copper_layers}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_copper_layer_count: {e}")
-        success = False
 
-    try:
-        enabled_layers = board.get_enabled_layers()
-        logger.info(f"   Включённых слоёв: {len(enabled_layers)}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_enabled_layers: {e}")
-        success = False
+    enabled_layers, ok = call_ipc(logger, "get_enabled_layers", board.get_enabled_layers)
+    success &= ok
 
-    try:
-        active_layer = board.get_active_layer()
+    active_layer, ok = call_ipc(logger, "get_active_layer", board.get_active_layer)
+    success &= ok
+    if active_layer is not None:
         logger.info(f"   Активный слой: {active_layer}")
-    except Exception as e:
-        logger.error(f"   Ошибка get_active_layer: {e}")
-        success = False
 
     # 5. Выделение (selection)
     logger.info("5. Выделение...")
-    try:
-        selection = board.get_selection()
-        logger.info(f"   Текущее выделение: {len(selection)} объектов")
-    except Exception as e:
-        logger.error(f"   Ошибка get_selection: {e}")
-        success = False
+    selection, ok = call_ipc(logger, "get_selection", board.get_selection)
+    success &= ok
 
     if footprints:
-        try:
-            board.add_to_selection([footprints[0]])
-            new_sel = board.get_selection()
-            logger.info(f"   После добавления: {len(new_sel)} объектов")
-            board.remove_from_selection([footprints[0]])
-            board.clear_selection()
-            logger.info("   Очистка выделения выполнена")
-        except Exception as e:
-            logger.error(f"   Ошибка при работе с выделением: {e}")
-            success = False
+        _, ok = call_ipc(logger, "add_to_selection", board.add_to_selection, [footprints[0]])
+        success &= ok
+        new_sel, ok = call_ipc(logger, "get_selection (после добавления)", board.get_selection)
+        success &= ok
+        _, ok = call_ipc(logger, "remove_from_selection", board.remove_from_selection, [footprints[0]])
+        success &= ok
+        _, ok = call_ipc(logger, "clear_selection", board.clear_selection)
+        success &= ok
 
     # 6. Транзакции (с правильным завершением)
     logger.info("6. Транзакции...")
-    commit = None
-    try:
-        commit = board.begin_commit()
-        logger.info("   Транзакция начата")
-        # Здесь можно было бы что-то изменить, но мы просто откатим
-        board.drop_commit(commit)
-        commit = None  # помечаем, что транзакция закрыта
-        logger.info("   Транзакция отменена (без изменений)")
-    except Exception as e:
-        logger.error(f"   Ошибка при работе с транзакцией: {e}")
-        success = False
-        # Попытаемся откатить, если транзакция висит
-        if commit is not None:
-            try:
-                board.drop_commit(commit)
-                logger.info("   Транзакция принудительно откачена")
-            except:
-                pass
+    commit, ok = call_ipc(logger, "begin_commit", board.begin_commit)
+    success &= ok
+    if commit is not None:
+        _, ok = call_ipc(logger, "drop_commit", board.drop_commit, commit)
+        success &= ok
 
     # 7. Сохранение (только если нет активной транзакции)
     logger.info("7. Сохранение...")
-    try:
-        board.save()
-        logger.info("   board.save() вызван успешно")
-    except Exception as e:
-        logger.error(f"   Ошибка save: {e}")
-        success = False
+    _, ok = call_ipc(logger, "save", board.save)
+    success &= ok
 
-    # 8. Экспорт (проверка наличия методов)
-    logger.info("8. Проверка методов экспорта...")
-    # Попробуем вызвать export_gerber, если он есть
-    try:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            if hasattr(board, 'export_gerber'):
-                result = board.export_gerber(tmpdir, board.get_layer_id('F.Cu'))
-                logger.info(f"   export_gerber: {'успешно' if result and result.success else 'не удался'}")
-            else:
-                logger.info("   Метод export_gerber отсутствует (пропускаем)")
-    except Exception as e:
-        logger.error(f"   Ошибка при экспорте: {e}")
-        success = False
-
-    # 9. Заливка зон (если есть зоны)
+    # 8. Заливка зон (если есть зоны)
     if zones:
-        logger.info("9. Заливка зон...")
-        try:
-            board.refill_zones(block=False, max_poll_seconds=1)
-            logger.info("   refill_zones вызван (асинхронно)")
-        except Exception as e:
-            logger.error(f"   Ошибка refill_zones: {e}")
-            success = False
+        logger.info("8. Заливка зон...")
+        _, ok = call_ipc(
+            logger, "refill_zones",
+            board.refill_zones, block=False, max_poll_seconds=1
+        )
+        success &= ok
 
     logger.info("=== ПОЛНЫЙ ТЕСТ ЗАВЕРШЁН ===")
-    return success
+    return bool(success)

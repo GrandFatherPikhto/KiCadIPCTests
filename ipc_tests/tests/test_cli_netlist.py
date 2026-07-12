@@ -13,20 +13,19 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    sch_path = get_schematic_path(board)
+    sch_path = get_schematic_path(board, logger=logger)
     if not sch_path or not os.path.exists(sch_path):
-        logger.error("Файл схемы не найден.")
+        logger.error(f"Файл схемы не найден: {sch_path}")
         return False
-    # Создаём временный файл для netlist
     with tempfile.NamedTemporaryFile(suffix=".xml", delete=False) as tmp:
         tmp_path = tmp.name
     try:
-        success = export_netlist(sch_path, tmp_path)
+        success = export_netlist(sch_path, tmp_path, logger=logger)
         if not success:
-            logger.error("Экспорт netlist не удался.")
+            logger.error("Экспорт netlist не удался (детали см. строками ERROR выше).")
             return False
         logger.info("Netlist экспортирован успешно.")
-        nets = parse_netlist_xml(tmp_path)
+        nets = parse_netlist_xml(tmp_path, logger=logger)
         if nets is None:
             logger.warning("Не удалось распарсить XML.")
             return False
@@ -37,5 +36,5 @@ def run_test(logger):
     finally:
         try:
             os.remove(tmp_path)
-        except:
+        except OSError:
             pass

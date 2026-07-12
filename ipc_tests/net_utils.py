@@ -2,23 +2,28 @@
 """
 Утилиты для работы с цепями (Net).
 """
+
 def get_net_name(net):
     """Возвращает имя цепи."""
-    if hasattr(net, 'name'):
-        return net.name
-    if hasattr(net, '_proto') and net._proto:
-        if hasattr(net._proto, 'name') and hasattr(net._proto.name, 'value'):
-            return net._proto.name.value
-    return None
+    return net.name if net is not None else None
+
 
 def get_net_code(net):
-    """Возвращает числовой код цепи."""
-    if hasattr(net, 'code'):
+    """
+    Возвращает числовой код цепи.
+
+    ПРИМЕЧАНИЕ: Net.code в kicad-python 0.7.1 официально помечен
+    @deprecated ("This property will be removed in KiCad 10; API clients
+    should not rely on net codes") — используйте net.name для сопоставления
+    цепей, где это возможно. Оставлено здесь только для отладочного вывода.
+    """
+    if net is None:
+        return None
+    try:
         return int(net.code)
-    if hasattr(net, '_proto') and net._proto:
-        if hasattr(net._proto, 'code') and hasattr(net._proto.code, 'value'):
-            return int(net._proto.code.value)
-    return None
+    except (TypeError, ValueError, AttributeError):
+        return None
+
 
 def find_net_by_name(nets, name):
     """Ищет цепь по имени (регистрозависимо)."""
@@ -27,11 +32,9 @@ def find_net_by_name(nets, name):
             return net
     return None
 
+
 def build_net_map(board):
-    """
-    Строит словарь {код: имя} для всех цепей платы.
-    Использует board.get_nets().
-    """
+    """Строит словарь {код: имя} для всех цепей платы через board.get_nets()."""
     net_map = {}
     for net in board.get_nets():
         code = get_net_code(net)

@@ -11,9 +11,9 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    proj_dir = get_project_path(board)
-    proj_name = get_project_name(board)
-    sch_path = get_schematic_path(board)
+    proj_dir = get_project_path(board, logger=logger)
+    proj_name = get_project_name(board, logger=logger)
+    sch_path = get_schematic_path(board, logger=logger)
     logger.info(f"Папка проекта: {proj_dir}")
     logger.info(f"Имя проекта: {proj_name}")
     logger.info(f"Путь к схеме: {sch_path}")

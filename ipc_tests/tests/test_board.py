@@ -10,6 +10,6 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    info = get_board_info(board)
+    info = get_board_info(board, logger=logger)
     logger.info(f"Информация о плате: {info}")
     return True

@@ -11,14 +11,16 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    footprints = get_footprints(board)
+    footprints = get_footprints(board, logger=logger)
     if not footprints:
-        logger.warning("Нет компонентов.")
+        logger.warning("Нет компонентов (см. лог выше — если это get_footprints "
+                        "упал с ошибкой, а не реально пустой список, причина будет "
+                        "явно записана строкой ERROR над этим сообщением).")
         return False
     logger.info(f"Всего компонентов: {len(footprints)}")
     for fp in footprints[:10]:
         ref = get_reference(fp)
         val = get_value(fp)
-        pads_count = len(get_pads(fp))
+        pads_count = len(get_pads(fp, logger=logger))
         logger.info(f"  {ref} ({val}) – площадок: {pads_count}")
     return True

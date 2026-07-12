@@ -11,17 +11,16 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    footprints = get_footprints(board)
+    footprints = get_footprints(board, logger=logger)
     if not footprints:
         logger.warning("Нет компонентов.")
         return False
-    # Берём первый компонент
     fp = footprints[0]
     ref = get_reference(fp)
     logger.info(f"Анализируем компонент: {ref}")
-    pads = get_pads(fp)
+    pads = get_pads(fp, logger=logger)
     if not pads:
-        logger.warning("У компонента нет площадок.")
+        logger.warning(f"У компонента {ref} нет площадок.")
         return False
     for pad in pads[:5]:
         pad_num = getattr(pad, 'number', '?')

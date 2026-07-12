@@ -11,7 +11,7 @@ def run_test(logger):
     board = get_kicad_board(logger=logger)
     if board is None:
         return False
-    nets = get_nets(board)
+    nets = get_nets(board, logger=logger)
     if not nets:
         logger.warning("Цепи не найдены.")
         return False
