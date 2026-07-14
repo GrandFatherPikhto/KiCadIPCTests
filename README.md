@@ -1858,13 +1858,11 @@ python -m runner.run --config config.yaml --test dummy_needs_params
 
 ---
 
-Да, такой список можно составить. Вся официальная документация по Python-биндингам KiCad (`kicad-python`) доступна по адресу: **[https://docs.kicad.org/kicad-python-main/](https://docs.kicad.org/kicad-python-main/)**.
-
-Ниже — полный перечень ссылок на документацию для всех ключевых API, используемых в проекте. Ссылки сгруппированы по модулям `core_api` для удобства.
-
----
 
 ## 1. `kicad_client.py` — подключение и базовые действия
+
+Вся официальная документация по Python-биндингам KiCad (`kicad-python`) доступна по адресу: **[https://docs.kicad.org/kicad-python-main/](https://docs.kicad.org/kicad-python-main/)**.
+
 
 | Функция / класс | Документация |
 | :--- | :--- |
@@ -2184,7 +2182,7 @@ python -m runner.run --config config.yaml --test dummy_needs_params
 
 ---
 
-## Вывод
+## Заключение
 
 Проект **осознанно** использует API, выходящие за пределы стабильного публичного интерфейса, потому что только так можно решить реальные задачи автоматизации и тестирования. Однако все такие места:
 
