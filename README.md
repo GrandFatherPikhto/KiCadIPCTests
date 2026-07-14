@@ -1858,6 +1858,176 @@ python -m runner.run --config config.yaml --test dummy_needs_params
 
 ---
 
+Да, такой список можно составить. Вся официальная документация по Python-биндингам KiCad (`kicad-python`) доступна по адресу: **[https://docs.kicad.org/kicad-python-main/](https://docs.kicad.org/kicad-python-main/)**.
+
+Ниже — полный перечень ссылок на документацию для всех ключевых API, используемых в проекте. Ссылки сгруппированы по модулям `core_api` для удобства.
+
+---
+
+## 1. `kicad_client.py` — подключение и базовые действия
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.KiCad` (конструктор) | [KiCad — kicad-python documentation](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.KiCad) |
+| `kipy.KiCad.get_board()` | [KiCad.get_board](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.KiCad.get_board) |
+| `kipy.KiCad.get_version()` | [KiCad.get_version](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.KiCad.get_version) |
+| `kipy.KiCad.run_action()` | [KiCad.run_action](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.KiCad.run_action) — **нестабильный API** (официальное предупреждение) |
+
+---
+
+## 2. `board.py` — работа с платой и транзакциями
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board.Board` | [Board — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board) |
+| `Board.begin_commit()` | [Board.begin_commit](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.begin_commit) |
+| `Board.push_commit()` | [Board.push_commit](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.push_commit) |
+| `Board.drop_commit()` | [Board.drop_commit](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.drop_commit) |
+| `Board.create_items()` | [Board.create_items](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.create_items) |
+| `Board.update_items()` | [Board.update_items](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.update_items) |
+| `Board.remove_items_by_id()` | [Board.remove_items_by_id](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.remove_items_by_id) |
+| `Board.get_item_bounding_box()` | [Board.get_item_bounding_box](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_item_bounding_box) |
+| `Board.get_copper_layer_count()` | [Board.get_copper_layer_count](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_copper_layer_count) |
+| `Board.get_project()` | [Board.get_project](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_project) |
+| `Board.get_selection()` | [Board.get_selection](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_selection) |
+| `Board.add_to_selection()` | [Board.add_to_selection](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.add_to_selection) |
+| `Board.clear_selection()` | [Board.clear_selection](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.clear_selection) |
+| `Board.refill_zones()` | [Board.refill_zones](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.refill_zones) |
+
+---
+
+## 3. `geometry.py` — геометрические примитивы
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.geometry.Vector2` | [Vector2 — kicad-python documentation](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Vector2) |
+| `Vector2.from_xy()` | [Vector2.from_xy](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Vector2.from_xy) |
+| `kipy.geometry.Angle` | [Angle — kicad-python documentation](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Angle) |
+| `Angle.from_degrees()` | [Angle.from_degrees](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Angle.from_degrees) |
+| `Angle.degrees` (свойство) | [Angle.degrees](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Angle.degrees) |
+| `kipy.geometry.Box2` | [Box2 — kicad-python documentation](https://docs.kicad.org/kicad-python-main/utilities.html#kipy.geometry.Box2) |
+
+---
+
+## 4. `footprints.py` — работа с компонентами
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.FootprintInstance` | [FootprintInstance — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance) |
+| `Board.get_footprints()` | [Board.get_footprints](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_footprints) |
+
+**Поля/свойства `FootprintInstance`:**
+| Поле | Документация |
+| :--- | :--- |
+| `.reference_field` | [FootprintInstance.reference_field](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.reference_field) |
+| `.value_field` | [FootprintInstance.value_field](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.value_field) |
+| `.definition` | [FootprintInstance.definition](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.definition) |
+| `.position` | [FootprintInstance.position](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.position) |
+| `.orientation` | [FootprintInstance.orientation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.orientation) |
+| `.layer` | [FootprintInstance.layer](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.FootprintInstance.layer) |
+
+---
+
+## 5. `pads.py` — работа с падами
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.Pad` | [Pad — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Pad) |
+| `Pad.number` | [Pad.number](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Pad.number) |
+| `Pad.position` | [Pad.position](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Pad.position) |
+| `Pad.net` | [Pad.net](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Pad.net) |
+| `Pad.padstack` | [Pad.padstack](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Pad.padstack) |
+
+---
+
+## 6. `nets.py` — работа с цепями
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.Net` | [Net — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Net) |
+| `Net.name` | [Net.name](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Net.name) |
+| `Net.code` | [Net.code](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Net.code) — **устаревшее** (deprecated) |
+| `Board.get_nets()` | [Board.get_nets](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_nets) |
+
+---
+
+## 7. `vias.py` — работа с переходными отверстиями
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.Via` | [Via — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Via) |
+| `Via.position` | [Via.position](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Via.position) |
+| `Via.net` | [Via.net](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Via.net) |
+| `Via.drill_diameter` | [Via.drill_diameter](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Via.drill_diameter) |
+| `Via.diameter` | [Via.diameter](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Via.diameter) |
+| `Board.get_vias()` | [Board.get_vias](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_vias) |
+
+---
+
+## 8. `zones.py` — работа с зонами
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.Zone` | [Zone — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Zone) |
+| `Zone.name` | [Zone.name](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Zone.name) |
+| `Zone.outline` | [Zone.outline](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Zone.outline) |
+| `Board.get_zones()` | [Board.get_zones](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_zones) |
+
+---
+
+## 9. `selection.py` — работа с выделением
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board_types.Group` | [Group — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.Group) |
+| `Group.proto` | **Недокументированное внутреннее поле** — официальной ссылки нет |
+
+---
+
+## 10. `project.py` — информация о проекте
+
+| Функция / класс | Документация |
+| :--- | :--- |
+| `kipy.board.Project` | [Project — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Project) |
+| `Project.path` | [Project.path](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Project.path) |
+| `Project.name` | [Project.name](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Project.name) |
+| `Board.get_project()` | [Board.get_project](https://docs.kicad.org/kicad-python-main/board.html#kipy.board.Board.get_project) |
+
+---
+
+## 11. Прочие типы и константы
+
+| Компонент | Документация |
+| :--- | :--- |
+| `kipy.board_types.BoardLayer` | [BoardLayer — kicad-python documentation](https://docs.kicad.org/kicad-python-main/board.html#kipy.board_types.BoardLayer) |
+| `kipy.proto.common.types.KIID` | [KIID — kicad-python documentation](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.proto.common.types.KIID) |
+| `kipy.proto.common.types.KiCadObjectType` | [KiCadObjectType — kicad-python documentation](https://docs.kicad.org/kicad-python-main/kicad.html#kipy.proto.common.types.KiCadObjectType) |
+
+---
+
+## Документация, отсутствующая в официальном API
+
+Следующие элементы **не имеют** официальной документации, поскольку они либо нестабильны, либо являются внутренними:
+
+| Элемент | Статус | Причина |
+| :--- | :--- | :--- |
+| `KiCad.run_action()` | **Нестабильный** | Официальное предупреждение в документации |
+| `Group.proto.items` | **Недокументированный** | Внутреннее поле protobuf |
+| `FootprintInstance.definition.items` | **Недокументированный** | Доступ к внутренней структуре определения |
+| `Net.code` | **Устаревший** | Помечен как deprecated, будет удалён |
+| `kicad-cli` (внешний инструмент) | **Внешний** | Не является частью Python API |
+
+---
+
+## Альтернативная документация (SWIG / pcbnew)
+
+Для некоторых операций может также пригодиться документация по «классическому» Python-API **pcbnew** (SWIG-биндинги):
+
+- [pcbnew.BOARD Class Reference (Doxygen)](https://docs.kicad.org/doxygen-python-7.0/classpcbnew_1_1BOARD.html)
+- [KiCad Pcbnew Python Scripting](https://docs.kicad.org/doxygen-python-7.0/) — общий индекс
+
+> **Важно:** Современный IPC-API (`kicad-python`) постепенно вытесняет SWIG-биндинги, но документация по pcbnew всё ещё может быть полезна для понимания внутренней структуры объектов.
+
 # Использование нестабильных, недокументированных и устаревших API
 
 Инструментарий разработан для решения реальных задач автоматизации и тестирования PCB-редактора KiCad. Некоторые из этих задач **невозможно** выполнить, оставаясь строго в рамках стабильного публичного API, предоставляемого библиотекой `kipy`. Поэтому проект сознательно использует:
