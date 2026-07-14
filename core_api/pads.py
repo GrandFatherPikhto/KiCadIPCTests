@@ -38,6 +38,23 @@ def get_net_name(pad: Pad) -> str:
     return pad.net.name if pad.net else ""
 
 
+def get_net_code(pad: Pad) -> Optional[int]:
+    """
+    Числовой код подключённой цепи, или None.
+
+    ДОБАВЛЕНО (2026-07-14, аудит против component_utils.py:get_pad_net_code)
+    — единственная функция старого файла без прямого аналога здесь. Та же
+    честная пометка, что и у nets.build_net_map(): Net.code официально
+    deprecated в kipy 0.7.1, использовать только для отладочного вывода.
+    """
+    if not pad.net:
+        return None
+    try:
+        return int(pad.net.code)
+    except (TypeError, ValueError, AttributeError):
+        return None
+
+
 def get_size_mm(pad: Pad) -> Optional[Tuple[float, float]]:
     """
     (width_mm, height_mm) — размер первого медного слоя падстека. Для

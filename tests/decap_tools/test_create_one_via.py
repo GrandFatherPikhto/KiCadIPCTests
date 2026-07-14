@@ -26,8 +26,6 @@ STATE_FILE = Path(__file__).parent / ".last_test_via.json"
 def run_test(logger, kicad, board, ref: str = None, offset_mm: float = 1.2,
              net: str = "GND", drill_mm: float = 0.3, diameter_mm: float = 0.6,
              remove: bool = False, remove_uuid: str = None, **params) -> bool:
-    logger.info(f"ПАРАМЕТРЫ: {params}")
-    logger.info(f"offset_mm = {offset_mm}")
     from core_api import footprints, nets, vias
 
     if remove:

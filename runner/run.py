@@ -31,19 +31,39 @@ class SharedConnection:
     ОДНО соединение с KiCad на весь прогон, лениво устанавливаемое при
     первой необходимости и переиспользуемое дальше. НЕ создавайте новое
     соединение внутри отдельных тестов — см. registry.register().
+
+    ИСПРАВЛЕНО (2026-07-14, аудит против старого ipc_tests/core.py):
+    раньше get() отдавал закэшированные kicad/board БЕЗ ПРОВЕРКИ, живы ли
+    они ещё — если KiCad перезапустится или сессия отвалится посреди
+    прогона, все последующие needs_kicad=True тесты получали бы мёртвые
+    объекты. Старый core.get_kicad_board() перед выдачей из кэша пинговал
+    соединение (board.get_project()) и автоматически переподключался при
+    провале — это поведение восстановлено здесь.
     """
-    def __init__(self, timeout_ms: int, logger):
+    def __init__(self, timeout_ms: int, logger, socket_path=None):
         self._timeout_ms = timeout_ms
+        self._socket_path = socket_path
         self._logger = logger
         self._kicad = None
         self._board = None
 
     def get(self):
-        if self._kicad is None:
-            from core_api import kicad_client
-            self._logger.debug(f"Устанавливаю соединение с KiCad (таймаут {self._timeout_ms} мс)...")
-            self._kicad = kicad_client.connect(timeout_ms=self._timeout_ms)
-            self._board = kicad_client.get_board(self._kicad)
+        from core_api import kicad_client
+
+        if self._kicad is not None:
+            try:
+                self._board.get_project()  # простейший пинг живости
+                return self._kicad, self._board
+            except Exception as e:
+                self._logger.warning(f"Закэшированное соединение с KiCad недоступно "
+                                     f"({type(e).__name__}: {e}), переподключаюсь")
+                self._kicad = None
+                self._board = None
+
+        self._logger.debug(f"Устанавливаю соединение с KiCad (таймаут {self._timeout_ms} мс"
+                           f"{f', socket_path={self._socket_path}' if self._socket_path else ''})...")
+        self._kicad = kicad_client.connect(timeout_ms=self._timeout_ms, socket_path=self._socket_path)
+        self._board = kicad_client.get_board(self._kicad)
         return self._kicad, self._board
 
     def refresh_board(self):
@@ -149,7 +169,8 @@ def main():
         logger.warning("Нечего запускать — проверьте --suite/--test и содержимое конфига")
         sys.exit(1)
 
-    shared_conn = SharedConnection(timeout_ms=cfg.kicad.timeout_ms, logger=logger)
+    shared_conn = SharedConnection(timeout_ms=cfg.kicad.timeout_ms, logger=logger,
+                                    socket_path=cfg.kicad.socket_path)
 
     results = []
     for suite_name, entry in to_run:

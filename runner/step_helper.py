@@ -19,15 +19,22 @@ def call_step(logger: logging.Logger, label: str, fn: Callable, *args, **kwargs)
     поведение, чем у core_api (там исключения свободно летят наружу) —
     тесты в этом стиле сами решают шаг за шагом, что делать при неудаче
     конкретного вызова, не обязательно прерывая весь тест сразу.
+
+    ИСПРАВЛЕНО (2026-07-14, аудит против старого ipc_tests/core.py:call_ipc):
+    вернул суффикс с количеством элементов в результате (если у него есть
+    __len__ — например, список) и уровень error (не warning) для
+    провалившегося шага — то же самое, что было в оригинале, потерялось
+    при первом переносе.
     """
     logger.debug(f"[...] {label}")
     t0 = time.perf_counter()
     try:
         result = fn(*args, **kwargs)
         elapsed = round((time.perf_counter() - t0) * 1000, 1)
-        logger.debug(f"[OK]  {label} — {elapsed} мс")
+        count = f", {len(result)} шт." if hasattr(result, "__len__") else ""
+        logger.debug(f"[OK]  {label} — {elapsed} мс{count}")
         return result, True
     except Exception as e:
         elapsed = round((time.perf_counter() - t0) * 1000, 1)
-        logger.warning(f"[ERR] {label} — {elapsed} мс — {type(e).__name__}: {e}")
+        logger.error(f"[ERR] {label} — {elapsed} мс — {type(e).__name__}: {e}")
         return None, False

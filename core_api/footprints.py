@@ -24,13 +24,27 @@ def get_by_ref(board, ref: str) -> Optional[FootprintInstance]:
 # --- Чтение ---
 
 def get_reference(fp: FootprintInstance) -> str:
-    """Refdes ('C5', 'IC1', ...)."""
-    return fp.reference_field.text.value
+    """
+    Refdes ('C5', 'IC1', ...).
+
+    ИСПРАВЛЕНО (2026-07-14, аудит против component_utils.py): возвращён
+    защитный getattr/hasattr с fallback '?' — на случай футпринта без
+    reference_field (в реальной практике такого не встречалось, но
+    старый код на это подстраховывался, и молчаливое исчезновение этой
+    подстраховки при переносе не было осознанным решением).
+    """
+    ref_field = getattr(fp, "reference_field", None)
+    if ref_field is not None and hasattr(ref_field, "text"):
+        return ref_field.text.value
+    return "?"
 
 
 def get_value(fp: FootprintInstance) -> str:
     """Номинал/значение ('100nF', '10CL006YE144C8G', ...)."""
-    return fp.value_field.text.value
+    val_field = getattr(fp, "value_field", None)
+    if val_field is not None and hasattr(val_field, "text"):
+        return val_field.text.value
+    return "?"
 
 
 def get_footprint_name(fp: FootprintInstance) -> str:
