@@ -1292,3 +1292,190 @@ UnboundLocalError: cannot access local variable 'footprints' where it is not ass
 2026-07-14 13:38:43.721 - KiCadIPCTests - INFO -   Проба get_footprints с повторами: [SUCCESS] УСПЕШНО — 13.1 мс
 2026-07-14 13:38:43.721 - KiCadIPCTests - INFO - Пройдено: 10/10. Общее время прогона: 20153.5 мс.
 2026-07-14 13:38:43.721 - KiCadIPCTests - INFO - ================================================================================
+2026-07-14 22:58:55.157 - kicad_toolkit - INFO - --- Запуск: dummy_ok (суита toy) ---
+2026-07-14 22:58:55.158 - kicad_toolkit - INFO - dummy_ok: параметры={'ref': 'C1', 'pad': '1', 'zone': 'RA_DECAP_ZONE', 'net': 'GND'}
+2026-07-14 22:58:55.158 - kicad_toolkit - INFO - [PASS] dummy_ok
+2026-07-14 22:58:55.158 - kicad_toolkit - INFO - ============================================================
+2026-07-14 22:58:55.158 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-14 22:58:55.158 - kicad_toolkit - INFO -   [PASS] dummy_ok
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - --- Запуск: dummy_ok (суита toy) ---
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - dummy_ok: параметры={'ref': 'C1', 'pad': '1', 'zone': 'RA_DECAP_ZONE', 'net': 'GND'}
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - [PASS] dummy_ok
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - --- Запуск: dummy_fail (суита toy) ---
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - dummy_fail: специально возвращает False
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - [FAIL] dummy_fail
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - --- Запуск: dummy_needs_params (суита toy) ---
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - dummy_needs_params: ref='C1', pad='1', остальное={'zone': 'RA_DECAP_ZONE', 'net': 'GND'}
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - [PASS] dummy_needs_params
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - ============================================================
+2026-07-14 22:59:05.787 - kicad_toolkit - INFO - ИТОГО: 2/3 пройдено
+2026-07-14 22:59:05.788 - kicad_toolkit - INFO -   [PASS] dummy_ok
+2026-07-14 22:59:05.788 - kicad_toolkit - INFO -   [FAIL] dummy_fail
+2026-07-14 22:59:05.788 - kicad_toolkit - INFO -   [PASS] dummy_needs_params
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - --- Запуск: dummy_ok (суита toy) ---
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - dummy_ok: параметры={'ref': 'C1', 'pad': '1', 'zone': 'RA_DECAP_ZONE', 'net': 'GND'}
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - [PASS] dummy_ok
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - --- Запуск: dummy_fail (суита toy) ---
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - dummy_fail: специально возвращает False
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - [FAIL] dummy_fail
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - --- Запуск: dummy_needs_params (суита toy) ---
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - dummy_needs_params: ref='C1', pad='1', остальное={'zone': 'RA_DECAP_ZONE', 'net': 'GND'}
+2026-07-14 22:59:20.127 - kicad_toolkit - INFO - [PASS] dummy_needs_params
+2026-07-14 22:59:20.128 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-14 22:59:20.152 - kicad_toolkit - INFO - --- Запуск: smoke_kicad_client (суита smoke) ---
+2026-07-14 22:59:20.153 - kicad_toolkit - INFO - Версия KiCad: 10.0.4 (10.0.4)
+2026-07-14 22:59:20.153 - kicad_toolkit - INFO - [PASS] smoke_kicad_client
+2026-07-14 22:59:20.153 - kicad_toolkit - INFO - --- Запуск: smoke_footprints (суита smoke) ---
+2026-07-14 22:59:20.164 - kicad_toolkit - INFO - Всего футпринтов на плате: 82
+2026-07-14 22:59:20.171 - kicad_toolkit - INFO - C1: value='1uF' footprint='Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder' pos=(166.515,79.195)мм angle=0.0° layer=3 is_back=False
+2026-07-14 22:59:20.172 - kicad_toolkit - INFO - Размер (одиночный запрос): (3.35, 1.51)
+2026-07-14 22:59:20.172 - kicad_toolkit - INFO - Размер (батч-запрос): [(3.35, 1.51)]
+2026-07-14 22:59:20.172 - kicad_toolkit - INFO - [PASS] smoke_footprints
+2026-07-14 22:59:20.172 - kicad_toolkit - INFO - --- Запуск: smoke_pads (суита smoke) ---
+2026-07-14 22:59:20.181 - kicad_toolkit - INFO - Пад у C1: 2
+2026-07-14 22:59:20.181 - kicad_toolkit - INFO - pad 1: pos=(165.653,79.195)мм net='+1V2' size=(1.075, 0.95) angle=0.0°
+2026-07-14 22:59:20.181 - kicad_toolkit - INFO - [PASS] smoke_pads
+2026-07-14 22:59:20.181 - kicad_toolkit - INFO - --- Запуск: smoke_nets (суита smoke) ---
+2026-07-14 22:59:20.182 - kicad_toolkit - INFO - Всего цепей на плате: 114
+2026-07-14 22:59:20.183 - kicad_toolkit - INFO - Найдена цепь: GND
+2026-07-14 22:59:20.183 - kicad_toolkit - INFO - [PASS] smoke_nets
+2026-07-14 22:59:20.183 - kicad_toolkit - INFO - --- Запуск: smoke_zones (суита smoke) ---
+2026-07-14 22:59:20.184 - kicad_toolkit - INFO - Зона 'RA_DECAP_ZONE': точек контура 4
+2026-07-14 22:59:20.184 - kicad_toolkit - INFO - [PASS] smoke_zones
+2026-07-14 22:59:20.184 - kicad_toolkit - INFO - --- Запуск: smoke_board_commit (суита smoke) ---
+2026-07-14 22:59:20.186 - kicad_toolkit - INFO - commit_with_retry на пустом действии: True
+2026-07-14 22:59:20.186 - kicad_toolkit - INFO - [PASS] smoke_board_commit
+2026-07-14 22:59:20.186 - kicad_toolkit - INFO - --- Запуск: smoke_vias (суита smoke) ---
+2026-07-14 22:59:20.202 - kicad_toolkit - INFO - Тестовая виа создана: id=31090449-3a58-454f-b2da-1e8158efa054
+2026-07-14 22:59:20.209 - kicad_toolkit - INFO - Тестовая виа удалена, плата чистая
+2026-07-14 22:59:20.209 - kicad_toolkit - INFO - [PASS] smoke_vias
+2026-07-14 22:59:20.209 - kicad_toolkit - INFO - --- Запуск: smoke_selection (суита smoke) ---
+2026-07-14 22:59:20.221 - kicad_toolkit - INFO - Сейчас ничего не выделено (или выделены не компоненты) — выделите что-то в KiCad и запустите тест снова
+2026-07-14 22:59:20.221 - kicad_toolkit - INFO - [PASS] smoke_selection
+2026-07-14 22:59:20.221 - kicad_toolkit - INFO - --- Запуск: static_via_drill_attribute_name (суита static) ---
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - hasattr(v,'drill')=False, hasattr(v,'drill_diameter')=True
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - КОНФИРМ: extractor.py/applier.py обращаются к несуществующему .drill (extractor всегда падает на default 0.3, applier кидает AttributeError)
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - [PASS] static_via_drill_attribute_name
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - --- Запуск: static_footprint_orientation_property_name (суита static) ---
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - hasattr(a,'as_degrees')=False, a.degrees=45.0
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - КОНФИРМ: angle в каждом извлечённом компоненте = 0.0, поворот теряется молча
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - [PASS] static_footprint_orientation_property_name
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - --- Запуск: static_footprint_get_layer_method (суита static) ---
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - hasattr(fp,'get_layer')=False
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - КОНФИРМ: layer в каждом извлечённом компоненте = 'F.Cu' (хардкод), сторона платы теряется
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - [PASS] static_footprint_get_layer_method
+2026-07-14 22:59:20.222 - kicad_toolkit - INFO - --- Запуск: static_getter_returns_copy_not_reference (суита static) ---
+2026-07-14 22:59:20.223 - kicad_toolkit - INFO - было 1000000, после .x=99000000 читаем снова: 1000000
+2026-07-14 22:59:20.223 - kicad_toolkit - INFO - КОНФИРМ: applier.py's 'fp.position.x = ...' и 'via.position.x = ...' не двигают компонент/via вообще никак — тихий no-op
+2026-07-14 22:59:20.223 - kicad_toolkit - INFO - [PASS] static_getter_returns_copy_not_reference
+2026-07-14 22:59:20.223 - kicad_toolkit - INFO - --- Запуск: static_net_assignment_via_attribute_is_noop (суита static) ---
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - было 'GND', после .name=... читаем снова: 'GND'
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - КОНФИРМ: applier.py's 'via.net.name = ...' / 'tr.net.name = ...' — тихий no-op
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - [PASS] static_net_assignment_via_attribute_is_noop
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - --- Запуск: static_orientation_setter_rejects_raw_float (суита static) ---
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - AttributeError: 'float' object has no attribute 'normalize180'
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - КОНФИРМ: apply_template() падает на ПЕРВОМ компоненте, до create_via/push_commit. Верно (DecapPlacer): fp.orientation = cmd.angle, где cmd.angle — kipy.geometry.Angle
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - [PASS] static_orientation_setter_rejects_raw_float
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - --- Запуск: static_push_commit_requires_commit_argument (суита static) ---
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - (self, commit: kipy.common_types.Commit, message: str = '')
+2026-07-14 22:59:20.224 - kicad_toolkit - INFO - КОНФИРМ: applier.py's 'board.push_commit()' кидает TypeError (missing 1 required positional argument: 'commit')
+2026-07-14 22:59:20.225 - kicad_toolkit - INFO - [PASS] static_push_commit_requires_commit_argument
+2026-07-14 22:59:20.225 - kicad_toolkit - INFO - --- Запуск: static_pad_has_no_footprint_backreference (суита static) ---
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - атрибуты Pad: ['id', 'net', 'number', 'pad_to_die_length', 'pad_type', 'padstack', 'position', 'proto']
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - Обоснование геометрического маппинга технически верно ДЛЯ board.get_pads(), но есть путь в обход (см. static_footprint_definition_items_contains_pads)
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - [PASS] static_pad_has_no_footprint_backreference
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - --- Запуск: static_footprint_definition_items_contains_pads (суита static) ---
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - hasattr(fp,'definition')=True, hasattr(fp.definition,'items')=True
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - Пад привязан к known футпринту по конструкции запроса, не ищется постфактум геометрическим маппингом по координатам
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - [PASS] static_footprint_definition_items_contains_pads
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - --- Запуск: static_run_action_is_documented_unstable (суита static) ---
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - Runs a KiCad tool action, if it is available  WARNING: This is an unstable API and is not intended for use other than by API developers. KiCad does not guarante...
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - Флип через run_action('pcbnew.InteractiveEdit.flip') — единственный способ реально отзеркалить пады/шёлкографию, но имена action не гарантированы стабильными
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - [PASS] static_run_action_is_documented_unstable
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - --- Запуск: static_refill_zones_default_is_blocking (суита static) ---
+2026-07-14 22:59:20.226 - kicad_toolkit - INFO - (self, block=True, max_poll_seconds: float = 30.0, poll_interval_seconds: float = 0.5)
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - Значит исходный busy-баг был осознанным (ошибочным) выбором в раннем прототипе, не default-поведением библиотеки
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - [PASS] static_refill_zones_default_is_blocking
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - --- Запуск: static_net_code_deprecated_but_present (суита static) ---
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - .. deprecated:: 0.4.0
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - [PASS] static_net_code_deprecated_but_present
+2026-07-14 22:59:20.227 - kicad_toolkit - INFO - --- Запуск: mutating_pad_ownership_comparison (суита mutating) ---
+2026-07-14 22:59:20.227 - kicad_toolkit - DEBUG - [...] board.get_pads()
+2026-07-14 22:59:20.230 - kicad_toolkit - DEBUG - [OK]  board.get_pads() — 2.6 мс
+2026-07-14 22:59:20.230 - kicad_toolkit - INFO - Путь А (board.get_pads()): 323 пад всего
+2026-07-14 22:59:20.230 - kicad_toolkit - INFO -   => есть обратная ссылка на футпринт: False (ожидание: False — геометрия была бы нужна ИМЕННО для этого пути)
+2026-07-14 22:59:20.237 - kicad_toolkit - INFO - Путь Б (footprint.definition.items): проверяю первые 5 из 82
+2026-07-14 22:59:20.237 - kicad_toolkit - INFO -   C27.2: net='GND' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.237 - kicad_toolkit - INFO -   C27.1: net='+1V2_VCCINT' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.237 - kicad_toolkit - INFO -   C37.2: net='GND' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.237 - kicad_toolkit - INFO -   C37.1: net='+3V3_VCCIO' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C45.2: net='GND' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C45.1: net='+1V2_VCCINT' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C46.2: net='GND' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C46.1: net='+1V2_VCCINT' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C54.2: net='GND' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO -   C54.1: net='+1V2_VCCD_PLL' — получено БЕЗ геометрии, владелец известен по конструкции запроса
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO - Путь Б: 10/10 пад с известной цепью, БЕЗ geometry-based сопоставления
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO - Геометрический маппинг не нужен, когда владеющий footprint уже известен (верно для extract/place — там футпринт уже выбран через selection)
+2026-07-14 22:59:20.238 - kicad_toolkit - INFO - [PASS] mutating_pad_ownership_comparison
+2026-07-14 22:59:20.239 - kicad_toolkit - INFO - --- Запуск: safe_connection_reuse (суита safe) ---
+2026-07-14 22:59:20.239 - kicad_toolkit - INFO - 5 повторных вызовов get_version() на общем соединении, мс: [0.2, 0.1, 0.2, 0.1, 0.1]
+2026-07-14 22:59:20.239 - kicad_toolkit - INFO - [PASS] safe_connection_reuse
+2026-07-14 22:59:20.240 - kicad_toolkit - INFO - --- Запуск: safe_board_info (суита safe) ---
+2026-07-14 22:59:20.249 - kicad_toolkit - INFO - Информация о плате: {'footprints_count': 82, 'nets_count': 114, 'board_size_mm': None, 'copper_layer_count': 2}
+2026-07-14 22:59:20.249 - kicad_toolkit - WARNING - Не удалось определить размер платы (контур Edge.Cuts не найден?)
+2026-07-14 22:59:20.249 - kicad_toolkit - INFO - [PASS] safe_board_info
+2026-07-14 22:59:20.250 - kicad_toolkit - INFO - --- Запуск: safe_project (суита safe) ---
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - Папка проекта: D:\Projects\Python\KiCadDecapPlacer\test_boards\10CL006YE144C8G
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - Имя проекта: 10CL006YE144C8G
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - Путь к схеме: D:\Projects\Python\KiCadDecapPlacer\test_boards\10CL006YE144C8G\10CL006YE144C8G.kicad_sch
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - Файл схемы существует
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - [PASS] safe_project
+2026-07-14 22:59:20.251 - kicad_toolkit - INFO - --- Запуск: safe_footprints_probe (суита safe) ---
+2026-07-14 22:59:20.251 - kicad_toolkit - DEBUG - [...] get_footprints (попытка 1/6)
+2026-07-14 22:59:20.258 - kicad_toolkit - DEBUG - [OK]  get_footprints (попытка 1/6) — 7.4 мс
+2026-07-14 22:59:20.259 - kicad_toolkit - INFO - Попытка 1: успех, 82 футпринтов
+2026-07-14 22:59:20.259 - kicad_toolkit - INFO - get_footprints в итоге отработал — состояние busy временное и само проходит
+2026-07-14 22:59:20.259 - kicad_toolkit - INFO - [PASS] safe_footprints_probe
+2026-07-14 22:59:20.259 - kicad_toolkit - INFO - --- Запуск: safe_cli_netlist (суита safe) ---
+2026-07-14 22:59:20.260 - kicad_toolkit - DEBUG - kicad-cli найден по стандартному пути: C:\Users\grand\AppData\Local\Programs\KiCad\10.0\bin\kicad-cli.exe
+2026-07-14 22:59:20.260 - kicad_toolkit - DEBUG - Запуск: C:\Users\grand\AppData\Local\Programs\KiCad\10.0\bin\kicad-cli.exe sch export netlist --format kicadxml --output C:\Users\grand\AppData\Local\Temp\tmphbl8dq17.xml D:\Projects\Python\KiCadDecapPlacer\test_boards\10CL006YE144C8G\10CL006YE144C8G.kicad_sch
+2026-07-14 22:59:39.919 - kicad_toolkit - INFO - Netlist экспортирован успешно
+2026-07-14 22:59:39.921 - kicad_toolkit - INFO - Найдено цепей в netlist: 113
+2026-07-14 22:59:39.921 - kicad_toolkit - INFO -   Цепь '+1V2': узлы ['C1.1', 'C15.1', 'C16.1']...
+2026-07-14 22:59:39.921 - kicad_toolkit - INFO -   Цепь '+1V2_VCCD_PLL': узлы ['C38.1', 'C39.1', 'C48.1']...
+2026-07-14 22:59:39.921 - kicad_toolkit - INFO -   Цепь '+1V2_VCCINT': узлы ['C19.1', 'C20.1', 'C21.1']...
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   Цепь '+2V5': узлы ['C17.1', 'C3.1', 'FB3.1']...
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   Цепь '+2V5_VCCA': узлы ['C28.1', 'C29.1', 'C49.1']...
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO - [PASS] safe_cli_netlist
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO - ============================================================
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO - ИТОГО: 28/29 пройдено
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   [PASS] dummy_ok
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   [FAIL] dummy_fail
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   [PASS] dummy_needs_params
+2026-07-14 22:59:39.922 - kicad_toolkit - INFO -   [PASS] smoke_kicad_client
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_footprints
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_pads
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_nets
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_zones
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_board_commit
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_vias
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] smoke_selection
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_via_drill_attribute_name
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_footprint_orientation_property_name
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_footprint_get_layer_method
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_getter_returns_copy_not_reference
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_net_assignment_via_attribute_is_noop
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_orientation_setter_rejects_raw_float
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_push_commit_requires_commit_argument
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_pad_has_no_footprint_backreference
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_footprint_definition_items_contains_pads
+2026-07-14 22:59:39.923 - kicad_toolkit - INFO -   [PASS] static_run_action_is_documented_unstable
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] static_refill_zones_default_is_blocking
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] static_net_code_deprecated_but_present
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] mutating_pad_ownership_comparison
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] safe_connection_reuse
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] safe_board_info
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] safe_project
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] safe_footprints_probe
+2026-07-14 22:59:39.924 - kicad_toolkit - INFO -   [PASS] safe_cli_netlist
