@@ -1,0 +1,162 @@
+# Конфигурация для платы 10CL006 (FPGA Cyclone 10)
+# Все параметры в миллиметрах, если не указано иное.
+
+kicad:
+  timeout_ms: 20000
+
+logging:
+  console_level: INFO
+  file: logs/test.log
+  file_level: DEBUG
+  rotate_max_bytes: 5242880
+  rotate_backups: 3
+
+boards:
+  10CL006:
+    ref: "C5"
+    pad: "1"
+    zone: "RA_DECAP_ZONE"
+    net: "GND"
+    offset_mm: 2.2
+    drill_mm: 0.3
+    diameter_mm: 0.6
+    angle_deg: 45.0
+    auto_revert: true
+
+suites:
+  toy:
+    enabled: false
+    tests:
+      dummy_ok:
+        enabled: true
+      dummy_fail:
+        enabled: false
+      dummy_raises:
+        enabled: false
+      dummy_needs_params:
+        enabled: false
+        ref: "C1"
+        pad: "1"
+      dummy_dangerous:
+        enabled: false
+
+  static:
+    enabled: true
+    tests:
+      static_via_drill_attribute_name:
+        enabled: true
+      static_footprint_orientation_property_name:
+        enabled: true
+      static_footprint_get_layer_method:
+        enabled: true
+      static_getter_returns_copy_not_reference:
+        enabled: true
+      static_net_assignment_via_attribute_is_noop:
+        enabled: true
+      static_orientation_setter_rejects_raw_float:
+        enabled: true
+      static_push_commit_requires_commit_argument:
+        enabled: true
+      static_pad_has_no_footprint_backreference:
+        enabled: true
+      static_footprint_definition_items_contains_pads:
+        enabled: true
+      static_run_action_is_documented_unstable:
+        enabled: true
+      static_refill_zones_default_is_blocking:
+        enabled: true
+      static_net_code_deprecated_but_present:
+        enabled: true
+
+  safe:
+    enabled: true
+    tests:
+      safe_board_info:
+        enabled: true
+      safe_cli_netlist:
+        enabled: true
+      safe_connection_reuse:
+        enabled: true
+      safe_footprints_probe:
+        enabled: true
+      safe_project:
+        enabled: true
+
+  smoke:
+    enabled: true
+    tests:
+      smoke_board_commit:
+        enabled: true
+      smoke_footprints:
+        enabled: true
+        ref: "C5"
+      smoke_kicad_client:
+        enabled: true
+      smoke_nets:
+        enabled: true
+        net: "GND"
+      smoke_pads:
+        enabled: true
+        ref: "C5"
+        pad: "1"
+      smoke_selection:
+        enabled: true
+      smoke_vias:
+        enabled: true
+        ref: "C5"
+        net: "GND"
+      smoke_zones:
+        enabled: true
+        zone: "RA_DECAP_ZONE"
+
+  mutating:
+    enabled: true
+    tests:
+      mutating_flip_then_update_items:
+        enabled: true
+        ref: "Ctest"
+      mutating_footprint_rotation_linkage:
+        enabled: true
+        ref: "Ctest"
+        angle_deg: 45.0
+        auto_revert: true
+      mutating_pad_ownership_comparison:
+        enabled: true
+      mutating_refill_zones_busy_repro:
+        enabled: true
+
+  decap_tools:
+    enabled: true
+    tests:
+      decap_create_one_via:
+        enabled: true
+        ref: "C5"
+        net: "GND"
+        offset_mm: 5.2
+        remove: false
+      decap_flip_one_cap:
+        enabled: true
+        ref: "C5"
+      decap_move_one_cap:
+        enabled: true
+        ref: "C5"
+        delta_mm: 1.0
+        revert: true
+      decap_via_placer:
+        enabled: true
+        gnd_net_name: "GND"
+        via:
+          offset_from: "edge"
+          offset_mm: 1.0
+          drill_mm: 0.3
+          diameter_mm: 0.6
+          keepout_clearance_mm: 0.2
+          search_step_mm: 0.1
+          search_max_radius_mm: 3.0
+          search_n_directions: 8
+        components:
+          - ref: "C5"
+            offset_mm: 1.2
+          - ref: "C6"
+            offset_mm: 1.5
+        dry_run: false

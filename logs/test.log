@@ -161,3 +161,213 @@
 2026-07-15 00:00:40.267 - kicad_toolkit - INFO -   [PASS] safe_project
 2026-07-15 00:00:40.267 - kicad_toolkit - INFO -   [PASS] safe_footprints_probe
 2026-07-15 00:00:40.267 - kicad_toolkit - INFO -   [PASS] safe_cli_netlist
+2026-07-15 00:05:24.685 - kicad_toolkit - ERROR - Тест 'decap_create_one_via' выключен в конфиге (enabled: false) — поставьте enabled: true в suites.decap_tools.tests.decap_create_one_via, чтобы запустить его явно. Это намеренная защита для опасных тестов.
+2026-07-15 00:07:50.995 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:07:51.024 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:07:51.024 - kicad_toolkit - ERROR - Нужен параметр ref (refdes компонента) или remove: true
+2026-07-15 00:07:51.025 - kicad_toolkit - INFO - [FAIL] decap_create_one_via
+2026-07-15 00:07:51.025 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:07:51.025 - kicad_toolkit - INFO - ИТОГО: 0/1 пройдено
+2026-07-15 00:07:51.025 - kicad_toolkit - INFO -   [FAIL] decap_create_one_via
+2026-07-15 00:09:46.264 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:09:46.286 - kicad_toolkit - INFO - --- Запуск: smoke_vias (суита smoke) ---
+2026-07-15 00:09:46.302 - kicad_toolkit - INFO - Тестовая виа создана: id=51812943-462f-4e8a-9d9e-b08f5447a58c
+2026-07-15 00:09:46.310 - kicad_toolkit - INFO - Тестовая виа удалена, плата чистая
+2026-07-15 00:09:46.311 - kicad_toolkit - INFO - [PASS] smoke_vias
+2026-07-15 00:09:46.311 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:09:46.311 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:09:46.311 - kicad_toolkit - INFO -   [PASS] smoke_vias
+2026-07-15 00:10:11.129 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:10:11.149 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:10:11.159 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:10:11.161 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:10:11.161 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.2 мс
+2026-07-15 00:10:11.161 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:10:11.161 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.3 мс
+2026-07-15 00:10:11.161 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:10:11.165 - kicad_toolkit - DEBUG - [OK]  push_commit — 3.9 мс
+2026-07-15 00:10:11.165 - kicad_toolkit - INFO - Готово. Виа создана, id=874a1349-47b1-49a6-a058-87465a4a430b
+2026-07-15 00:10:11.166 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:10:11.166 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:10:11.166 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:10:11.166 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:10:11.166 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:10:44.500 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:10:44.519 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:10:44.530 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:10:44.532 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:10:44.532 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.1 мс
+2026-07-15 00:10:44.532 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:10:44.532 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.4 мс
+2026-07-15 00:10:44.532 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:10:44.536 - kicad_toolkit - DEBUG - [OK]  push_commit — 3.6 мс
+2026-07-15 00:10:44.536 - kicad_toolkit - INFO - Готово. Виа создана, id=3a337e23-c70f-48fb-81f0-935ffa7b0067
+2026-07-15 00:10:44.537 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:10:44.537 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:10:44.537 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:10:44.537 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:10:44.537 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:10:55.590 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:10:55.612 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:10:55.622 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:10:55.624 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:10:55.624 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.2 мс
+2026-07-15 00:10:55.624 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:10:55.625 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.4 мс
+2026-07-15 00:10:55.625 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:10:55.629 - kicad_toolkit - DEBUG - [OK]  push_commit — 3.8 мс
+2026-07-15 00:10:55.629 - kicad_toolkit - INFO - Готово. Виа создана, id=658b8cf9-7786-45af-8675-7c1b2fdab5e8
+2026-07-15 00:10:55.629 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:10:55.629 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:10:55.629 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:10:55.630 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:10:55.630 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:11:17.417 - kicad_toolkit - ERROR - "Тест 'decap_create_one_cap' не зарегистрирован (проверьте, что модуль с ним импортирован)"
+2026-07-15 00:11:17.417 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:11:17.417 - kicad_toolkit - INFO - ИТОГО: 0/1 пройдено
+2026-07-15 00:11:17.418 - kicad_toolkit - INFO -   [FAIL] decap_create_one_cap
+2026-07-15 00:11:37.820 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:11:37.850 - kicad_toolkit - INFO - --- Запуск: decap_flip_one_cap [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:11:37.861 - kicad_toolkit - INFO - До флипа: layer=F.Cu, pos=(153.640, 90.935) мм, angle=0.0°
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO - После флипа: layer=B.Cu, pos=(153.640, 90.935) мм, angle=180.0°
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO - Сработало — слой реально сменился на B.Cu
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO - [PASS] decap_flip_one_cap
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:11:37.941 - kicad_toolkit - INFO -   [PASS] decap_flip_one_cap
+2026-07-15 00:12:10.016 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:12:10.047 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:12:10.058 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:12:10.060 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:12:10.060 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.2 мс
+2026-07-15 00:12:10.060 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:12:10.061 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.3 мс
+2026-07-15 00:12:10.061 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:12:10.065 - kicad_toolkit - DEBUG - [OK]  push_commit — 4.5 мс
+2026-07-15 00:12:10.065 - kicad_toolkit - INFO - Готово. Виа создана, id=7b1968de-56b6-4f8c-aa27-f43632139de3
+2026-07-15 00:12:10.066 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:12:10.066 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:12:10.066 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:12:10.066 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:12:10.066 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:12:24.575 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:12:24.612 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:12:24.623 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:12:24.625 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:12:24.626 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.2 мс
+2026-07-15 00:12:24.626 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:12:24.626 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.4 мс
+2026-07-15 00:12:24.626 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:12:24.634 - kicad_toolkit - DEBUG - [OK]  push_commit — 7.5 мс
+2026-07-15 00:12:24.634 - kicad_toolkit - INFO - Готово. Виа создана, id=df016fc2-a1c6-4f17-a6ba-ea7a2228cbe3
+2026-07-15 00:12:24.634 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:12:24.635 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:12:24.635 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:12:24.635 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:12:24.635 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:13:28.926 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:13:28.949 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:13:28.959 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:13:28.961 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:13:28.961 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.3 мс
+2026-07-15 00:13:28.961 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:13:28.961 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.4 мс
+2026-07-15 00:13:28.961 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:13:28.965 - kicad_toolkit - DEBUG - [OK]  push_commit — 3.6 мс
+2026-07-15 00:13:28.965 - kicad_toolkit - INFO - Готово. Виа создана, id=7847aec5-1e12-4e57-b7b3-6d259484293b
+2026-07-15 00:13:28.966 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:13:28.966 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:13:28.966 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:13:28.966 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:13:28.966 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:15:05.329 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:15:05.349 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:15:05.359 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:15:05.360 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:15:05.361 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.1 мс
+2026-07-15 00:15:05.361 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:15:05.361 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.5 мс
+2026-07-15 00:15:05.361 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:15:05.366 - kicad_toolkit - DEBUG - [OK]  push_commit — 4.2 мс
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO - Готово. Виа создана, id=ce2ab000-b1aa-40a9-bf03-701e20cad152
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:15:05.366 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:18:15.853 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:18:15.895 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:18:15.895 - kicad_toolkit - INFO - ПАРАМЕТРЫ: {'pad': '1', 'zone': 'RA_DECAP_ZONE', 'extra': {'offset_mm': 2.2, 'drill_mm': 0.3, 'diameter_mm': 0.6, 'angle_deg': 45.0, 'auto_revert': True}, 'params': {'ref': 'C5', 'net': 'GND', 'offset_mm': 1.2, 'remove': True}}
+2026-07-15 00:18:15.895 - kicad_toolkit - INFO - offset_mm = 1.2
+2026-07-15 00:18:15.906 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:18:15.908 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:18:15.911 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 2.1 мс
+2026-07-15 00:18:15.911 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:18:15.911 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.5 мс
+2026-07-15 00:18:15.911 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:18:15.917 - kicad_toolkit - DEBUG - [OK]  push_commit — 5.3 мс
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO - Готово. Виа создана, id=b438a7d6-ae2a-4d34-bb0f-96c2cfe50a38
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:18:15.917 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:18:42.165 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:18:42.187 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:18:42.187 - kicad_toolkit - INFO - ПАРАМЕТРЫ: {'pad': '1', 'zone': 'RA_DECAP_ZONE', 'extra': {'offset_mm': 2.2, 'drill_mm': 0.3, 'diameter_mm': 0.6, 'angle_deg': 45.0, 'auto_revert': True}, 'params': {'ref': 'C5', 'net': 'GND', 'offset_mm': 5.2, 'remove': True}}
+2026-07-15 00:18:42.187 - kicad_toolkit - INFO - offset_mm = 1.2
+2026-07-15 00:18:42.197 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (154.840, 90.935) мм, net=GND
+2026-07-15 00:18:42.199 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:18:42.199 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.2 мс
+2026-07-15 00:18:42.199 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:18:42.200 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.4 мс
+2026-07-15 00:18:42.200 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:18:42.204 - kicad_toolkit - DEBUG - [OK]  push_commit — 4.2 мс
+2026-07-15 00:18:42.204 - kicad_toolkit - INFO - Готово. Виа создана, id=cfa0106f-8517-4b61-ac43-5900e8761bd3
+2026-07-15 00:18:42.205 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:18:42.205 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:18:42.205 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:18:42.205 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:18:42.205 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:22:05.672 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:22:05.691 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:22:05.691 - kicad_toolkit - INFO - ПАРАМЕТРЫ: {'pad': '1', 'zone': 'RA_DECAP_ZONE', 'angle_deg': 45.0, 'auto_revert': True}
+2026-07-15 00:22:05.691 - kicad_toolkit - INFO - offset_mm = 5.2
+2026-07-15 00:22:05.698 - kicad_toolkit - INFO - Беру id из .last_test_via.json: cfa0106f-8517-4b61-ac43-5900e8761bd3
+2026-07-15 00:22:05.698 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:22:05.698 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.3 мс
+2026-07-15 00:22:05.699 - kicad_toolkit - DEBUG - [...] remove_by_id([...])
+2026-07-15 00:22:05.699 - kicad_toolkit - DEBUG - [OK]  remove_by_id([...]) — 0.2 мс
+2026-07-15 00:22:05.699 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:22:05.699 - kicad_toolkit - DEBUG - [OK]  push_commit — 0.2 мс
+2026-07-15 00:22:05.699 - kicad_toolkit - INFO - Виа cfa0106f-8517-4b61-ac43-5900e8761bd3 удалена
+2026-07-15 00:22:05.699 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:22:05.700 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:22:05.700 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:22:05.700 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
+2026-07-15 00:22:41.212 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:22:41.269 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:22:41.269 - kicad_toolkit - INFO - ПАРАМЕТРЫ: {'pad': '1', 'zone': 'RA_DECAP_ZONE', 'angle_deg': 45.0, 'auto_revert': True}
+2026-07-15 00:22:41.269 - kicad_toolkit - INFO - offset_mm = 5.2
+2026-07-15 00:22:41.270 - kicad_toolkit - ERROR - Нет сохранённого id в D:\Projects\Python\KiCadIPCTest\tests\decap_tools\.last_test_via.json — передайте remove_uuid явно
+2026-07-15 00:22:41.270 - kicad_toolkit - INFO - [FAIL] decap_create_one_via
+2026-07-15 00:22:41.270 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:22:41.270 - kicad_toolkit - INFO - ИТОГО: 0/1 пройдено
+2026-07-15 00:22:41.270 - kicad_toolkit - INFO -   [FAIL] decap_create_one_via
+2026-07-15 00:23:19.616 - kicad_toolkit - DEBUG - Устанавливаю соединение с KiCad (таймаут 20000 мс)...
+2026-07-15 00:23:19.661 - kicad_toolkit - INFO - --- Запуск: decap_create_one_via [ОПАСНЫЙ] (суита decap_tools) ---
+2026-07-15 00:23:19.662 - kicad_toolkit - INFO - ПАРАМЕТРЫ: {'pad': '1', 'zone': 'RA_DECAP_ZONE', 'angle_deg': 45.0, 'auto_revert': True}
+2026-07-15 00:23:19.662 - kicad_toolkit - INFO - offset_mm = 5.2
+2026-07-15 00:23:19.673 - kicad_toolkit - INFO - C5 на (153.640, 90.935) мм, виа будет на (158.840, 90.935) мм, net=GND
+2026-07-15 00:23:19.674 - kicad_toolkit - DEBUG - [...] begin_commit()
+2026-07-15 00:23:19.675 - kicad_toolkit - DEBUG - [OK]  begin_commit() — 0.6 мс
+2026-07-15 00:23:19.675 - kicad_toolkit - DEBUG - [...] create_items([via])
+2026-07-15 00:23:19.676 - kicad_toolkit - DEBUG - [OK]  create_items([via]) — 0.5 мс
+2026-07-15 00:23:19.676 - kicad_toolkit - DEBUG - [...] push_commit
+2026-07-15 00:23:19.682 - kicad_toolkit - DEBUG - [OK]  push_commit — 5.6 мс
+2026-07-15 00:23:19.682 - kicad_toolkit - INFO - Готово. Виа создана, id=0a694e05-e6b3-488d-9c79-55a1ccb7a77e
+2026-07-15 00:23:19.682 - kicad_toolkit - INFO - id сохранён в .last_test_via.json — для удаления: remove: true
+2026-07-15 00:23:19.682 - kicad_toolkit - INFO - [PASS] decap_create_one_via
+2026-07-15 00:23:19.682 - kicad_toolkit - INFO - ============================================================
+2026-07-15 00:23:19.683 - kicad_toolkit - INFO - ИТОГО: 1/1 пройдено
+2026-07-15 00:23:19.683 - kicad_toolkit - INFO -   [PASS] decap_create_one_via
