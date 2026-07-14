@@ -68,4 +68,7 @@ files/
 olddocs/
 old/
 
+diagnose
+logs
+
 ipc_test.txt
