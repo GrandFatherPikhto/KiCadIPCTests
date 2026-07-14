@@ -50,6 +50,8 @@ pip-delete-this-directory.txt
 *-bak
 _autosave-*
 fp-info-cache
+~*.*
+*.lck
 
 # ────────────────────────────── C ──────────────────────────────
 # На будущее: если начнете писать CLI на Си в этой же папке
@@ -60,14 +62,10 @@ fp-info-cache
 *.app
 
 *.zip
-zip_project.*
 
 arch/
 test_sample/
 files/
 olddocs/
 old/
-
-diagnose
-
-ipc_test.txt
+orig/
