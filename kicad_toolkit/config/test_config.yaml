@@ -1,0 +1,120 @@
+kicad:
+  timeout_ms: 20000
+  socket_path: null
+
+logging:
+  console_level: INFO
+  file: logs/test.log
+  file_level: DEBUG
+  rotate_max_bytes: 5242880
+  rotate_backups: 3
+
+boards:
+  10CL006:
+    ref: "C1"
+    pad: "1"
+    zone: "RA_DECAP_ZONE"
+    net: "GND"
+  mishin_coil:
+    ref: "C40"
+    pad: "2"
+    zone: "RA_DECAP_ZONE"
+    net: "GND"
+
+suites:
+  toy:
+    enabled: true
+    tests:
+      dummy_ok: true
+      dummy_fail: true
+      dummy_needs_params: true
+      dummy_dangerous:
+        enabled: false     # опасный тест выключен по умолчанию -- проверяем именно это
+        dangerous: true
+
+  smoke:
+    enabled: true
+    tests:
+      smoke_kicad_client: true
+      smoke_footprints: true
+      smoke_pads: true
+      smoke_nets: true
+      smoke_zones: true
+      smoke_board_commit: true
+      smoke_vias: true
+      smoke_selection: true
+
+  static:
+    enabled: true
+    tests:
+      static_via_drill_attribute_name: true
+      static_footprint_orientation_property_name: true
+      static_footprint_get_layer_method: true
+      static_getter_returns_copy_not_reference: true
+      static_net_assignment_via_attribute_is_noop: true
+      static_orientation_setter_rejects_raw_float: true
+      static_push_commit_requires_commit_argument: true
+      static_pad_has_no_footprint_backreference: true
+      static_footprint_definition_items_contains_pads: true
+      static_run_action_is_documented_unstable: true
+      static_refill_zones_default_is_blocking: true
+      static_net_code_deprecated_but_present: true
+
+  mutating:
+    enabled: true
+    tests:
+      # Реально мутируют плату (хоть и восстанавливают за собой) —
+      # выключены по умолчанию, включайте явно и с осторожным ref.
+      mutating_flip_then_update_items:
+        enabled: false
+        dangerous: true
+      mutating_footprint_rotation_linkage:
+        enabled: false
+        dangerous: true
+        angle_deg: 45.0
+        auto_revert: true
+      # Read-only, ничего не мутирует -- можно смело держать включённым.
+      mutating_pad_ownership_comparison:
+        enabled: true
+        dangerous: false
+      # Самый опасный -- может оставить плату в постоянном busy до
+      # перезапуска KiCad. Включайте только осознанно.
+      mutating_refill_zones_busy_repro:
+        enabled: false
+        dangerous: true
+
+  safe:
+    enabled: true
+    tests:
+      safe_connection_reuse: true
+      safe_board_info: true
+      safe_project: true
+      safe_footprints_probe: true
+      safe_cli_netlist: true
+
+  decap_tools:
+    enabled: true
+    tests:
+      decap_move_one_cap:
+        enabled: false
+        dangerous: true
+        delta_mm: 1.0
+      decap_create_one_via:
+        enabled: false
+        dangerous: true
+        offset_mm: 1.2
+        net: "GND"
+      decap_flip_one_cap:
+        enabled: false
+        dangerous: true
+      decap_via_placer:
+        enabled: false
+        dangerous: true
+        dry_run: true
+        gnd_net_name: "GND"
+        via:
+          offset_from: "courtyard"
+          offset_mm: 1.0
+          drill_mm: 0.3
+          diameter_mm: 0.6
+        components: []
