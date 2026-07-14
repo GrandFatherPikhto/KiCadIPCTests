@@ -13940,6 +13940,14 @@
 			)
 		)
 	)
+	(via
+		(at 158.839999 90.935)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(net "GND")
+		(uuid "0f96bbff-0346-4410-939a-73969b3c4d83")
+	)
 	(zone
 		(layers "F.Cu" "B.Cu")
 		(uuid "4e9a18da-bf5a-419c-9e44-1984fb83f9a5")
